@@ -3,9 +3,9 @@
 package provider
 
 import (
+	"altinity/internal/sdk/pkg/models/shared"
 	"encoding/json"
 	"github.com/hashicorp/terraform-plugin-framework/types"
-	"terraform/internal/sdk/pkg/models/shared"
 )
 
 func (r *ClickhouseClusterResourceModel) ToCreateSDKType() *shared.ClickhouseClusterRequestInput {

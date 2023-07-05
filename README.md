@@ -1,4 +1,4 @@
-# terraform
+# Terraform Provider Altinity
 
 <!-- Start SDK Installation -->
 ## SDK Installation
@@ -8,14 +8,14 @@ To install this provider, copy and paste this code into your Terraform configura
 ```hcl
 terraform {
   required_providers {
-    terraform = {
-      source  = "speakeasy/terraform"
+    altinity = {
+      source  = "altinity/altinity"
       version = "0.0.1"
     }
   }
 }
 
-provider "terraform" {
+provider "altinity" {
   # Configuration options
 }
 ```

@@ -1,4 +1,4 @@
-module terraform
+module altinity
 
 go 1.18
 

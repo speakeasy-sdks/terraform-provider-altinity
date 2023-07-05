@@ -3,13 +3,13 @@
 package sdk
 
 import (
+	"altinity/internal/sdk/pkg/models/operations"
+	"altinity/internal/sdk/pkg/utils"
 	"bytes"
 	"context"
 	"fmt"
 	"io"
 	"net/http"
-	"terraform/internal/sdk/pkg/models/operations"
-	"terraform/internal/sdk/pkg/utils"
 	"time"
 )
 

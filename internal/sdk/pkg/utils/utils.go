@@ -12,7 +12,7 @@ import (
 	"strings"
 	"time"
 
-	"terraform/internal/sdk/pkg/types"
+	"altinity/internal/sdk/pkg/types"
 )
 
 const (

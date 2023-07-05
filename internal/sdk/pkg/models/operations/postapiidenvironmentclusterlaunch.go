@@ -3,8 +3,8 @@
 package operations
 
 import (
+	"altinity/internal/sdk/pkg/models/shared"
 	"net/http"
-	"terraform/internal/sdk/pkg/models/shared"
 )
 
 type PostAPIIDEnvironmentClusterLaunchRequest struct {
