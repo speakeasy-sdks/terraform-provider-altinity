@@ -81,5 +81,7 @@ internal/sdk/pkg/models/shared/clickhouseclusterresponse.go
 internal/sdk/pkg/models/shared/clickhouseclusterrequestinput.go
 USAGE.md
 internal/provider/provider.go
+examples/provider/provider.tf
 internal/provider/clickhousecluster_resource.go
 internal/provider/clickhousecluster_resource_sdk.go
+examples/resources/altinity_clickhouse_cluster/resource.tf
