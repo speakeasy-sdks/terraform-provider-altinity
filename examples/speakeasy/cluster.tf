@@ -21,9 +21,8 @@ variable "speakeasy_admin_pass" {
 }
 
 resource "altinity_clickhouse_cluster" "my_clickhousecluster" {
-  admin_pass          = var.speakeasy_admin_pass
-  admin_user          = "admin"
-  alternate_endpoints = []
+  admin_pass = var.speakeasy_admin_pass
+  admin_user = "admin"
   azlist = [
     "us-west1-a",
   ]
@@ -52,29 +51,27 @@ resource "altinity_clickhouse_cluster" "my_clickhousecluster" {
     logs    = false
     metrics = false
   }
-  disks                = 1
-  domain_name          = "dev.speakeasyapi.altinity.cloud"
-  host                 = "localhost"
-  http_port            = 5123
-  id_environment       = "675"
-  internal_domain_name = ""
-  ip_whitelist         = "31.94.0.155"
-  lb_type              = "ingress"
-  name                 = "dev"
-  nodes                = 1
-  node_type            = "n2d-standard-2"
-  port                 = 9900
-  public_endpoint      = true
-  region               = "system"
-  replicas             = "1"
-  replicate_schema     = true
-  secure               = true
-  shards               = 1
-  size                 = 100
-  ssh_port             = 2222
-  storage_class        = "pd-balanced"
-  type                 = "kubernetes"
-  uptime               = "stop"
+  disks            = 1
+  domain_name      = "dev.speakeasyapi.altinity.cloud"
+  host             = "localhost"
+  http_port        = 5123
+  id_environment   = "675"
+  ip_whitelist     = "31.94.0.155"
+  lb_type          = "ingress"
+  name             = "dev"
+  nodes            = 1
+  node_type        = "n2d-standard-2"
+  port             = 9900
+  public_endpoint  = true
+  region           = "system"
+  replicas         = "1"
+  replicate_schema = true
+  secure           = true
+  size             = 100
+  ssh_port         = 2222
+  storage_class    = "pd-balanced"
+  type             = "kubernetes"
+  uptime           = "stop"
   uptime_settings = {
     inactive_hours = 24
     schedule = {
@@ -136,12 +133,10 @@ resource "altinity_clickhouse_cluster" "my_clickhousecluster" {
       }
     }
   }
-  version       = "22.8.15.25.altinitystable"
-  version_image = ""
-  zookeeper     = "launch"
+  version   = "22.8.15.25.altinitystable"
+  zookeeper = "launch"
   zookeeper_options = {
     root = "1"
     size = "single"
-    tag  = ""
   }
 }

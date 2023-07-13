@@ -42,9 +42,9 @@ type ClickhouseClusterResponseBackupOptions struct {
 	Day               int64                                            `json:"day"`
 	Enable            bool                                             `json:"enable"`
 	Keep              string                                           `json:"keep"`
-	Path              string                                           `json:"path"`
+	Path              *string                                          `json:"path,omitempty"`
 	Provider          string                                           `json:"provider"`
-	Region            string                                           `json:"region"`
+	Region            *string                                          `json:"region,omitempty"`
 	Schedule          string                                           `json:"schedule"`
 	SecretKey         string                                           `json:"secretKey"`
 	Settings          []ClickhouseClusterResponseBackupOptionsSettings `json:"settings"`

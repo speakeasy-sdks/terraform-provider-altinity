@@ -170,10 +170,11 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 				},
 			},
 			"alternate_endpoints": schema.ListAttribute{
+				Computed: true,
 				PlanModifiers: []planmodifier.List{
 					listplanmodifier.RequiresReplace(),
 				},
-				Required:    true,
+				Optional:    true,
 				ElementType: types.StringType,
 				Validators: []validator.List{
 					listvalidator.ValueStringsAre(validators.IsValidJSON()),
@@ -675,7 +676,7 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 				PlanModifiers: []planmodifier.String{
 					stringplanmodifier.RequiresReplace(),
 				},
-				Required: true,
+				Optional: true,
 			},
 			"internal_name": schema.StringAttribute{
 				Computed: true,
@@ -2150,10 +2151,11 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 				Required: true,
 			},
 			"shards": schema.Int64Attribute{
+				Computed: true,
 				PlanModifiers: []planmodifier.Int64{
 					int64planmodifier.RequiresReplace(),
 				},
-				Required: true,
+				Optional: true,
 			},
 			"size": schema.Int64Attribute{
 				PlanModifiers: []planmodifier.Int64{
@@ -2509,7 +2511,7 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 				PlanModifiers: []planmodifier.String{
 					stringplanmodifier.RequiresReplace(),
 				},
-				Required: true,
+				Optional: true,
 			},
 			"zookeeper": schema.StringAttribute{
 				PlanModifiers: []planmodifier.String{
@@ -2539,7 +2541,7 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 						PlanModifiers: []planmodifier.String{
 							stringplanmodifier.RequiresReplace(),
 						},
-						Required: true,
+						Optional: true,
 					},
 				},
 			},

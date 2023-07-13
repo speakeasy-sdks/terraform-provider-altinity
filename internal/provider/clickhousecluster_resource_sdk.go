@@ -69,7 +69,12 @@ func (r *ClickhouseClusterResourceModel) ToCreateSDKType() *shared.ClickhouseClu
 	domainName := r.DomainName.ValueString()
 	host := r.Host.ValueString()
 	httpPort := r.HTTPPort.ValueInt64()
-	internalDomainName := r.InternalDomainName.ValueString()
+	internalDomainName := new(string)
+	if !r.InternalDomainName.IsUnknown() && !r.InternalDomainName.IsNull() {
+		*internalDomainName = r.InternalDomainName.ValueString()
+	} else {
+		internalDomainName = nil
+	}
 	ipWhitelist := r.IPWhitelist.ValueString()
 	lbType := r.LbType.ValueString()
 	name := r.Name.ValueString()
@@ -81,7 +86,12 @@ func (r *ClickhouseClusterResourceModel) ToCreateSDKType() *shared.ClickhouseClu
 	replicas := r.Replicas.ValueString()
 	replicateSchema := r.ReplicateSchema.ValueBool()
 	secure := r.Secure.ValueBool()
-	shards := r.Shards.ValueInt64()
+	shards := new(int64)
+	if !r.Shards.IsUnknown() && !r.Shards.IsNull() {
+		*shards = r.Shards.ValueInt64()
+	} else {
+		shards = nil
+	}
 	size := r.Size.ValueInt64()
 	sshPort := r.SSHPort.ValueInt64()
 	storageClass := r.StorageClass.ValueString()
@@ -193,11 +203,21 @@ func (r *ClickhouseClusterResourceModel) ToCreateSDKType() *shared.ClickhouseClu
 		Schedule:      schedule1,
 	}
 	version := r.Version.ValueString()
-	versionImage := r.VersionImage.ValueString()
+	versionImage := new(string)
+	if !r.VersionImage.IsUnknown() && !r.VersionImage.IsNull() {
+		*versionImage = r.VersionImage.ValueString()
+	} else {
+		versionImage = nil
+	}
 	zookeeper := r.Zookeeper.ValueString()
 	root := r.ZookeeperOptions.Root.ValueString()
 	size1 := r.ZookeeperOptions.Size.ValueString()
-	tag := r.ZookeeperOptions.Tag.ValueString()
+	tag := new(string)
+	if !r.ZookeeperOptions.Tag.IsUnknown() && !r.ZookeeperOptions.Tag.IsNull() {
+		*tag = r.ZookeeperOptions.Tag.ValueString()
+	} else {
+		tag = nil
+	}
 	zookeeperOptions := shared.ClickhouseClusterRequestInputZookeeperOptions{
 		Root: root,
 		Size: size1,
@@ -269,9 +289,17 @@ func (r *ClickhouseClusterResourceModel) RefreshFromCreateResponse(resp *shared.
 	r.BackupOptions.Day = types.Int64Value(resp.BackupOptions.Day)
 	r.BackupOptions.Enable = types.BoolValue(resp.BackupOptions.Enable)
 	r.BackupOptions.Keep = types.StringValue(resp.BackupOptions.Keep)
-	r.BackupOptions.Path = types.StringValue(resp.BackupOptions.Path)
+	if resp.BackupOptions.Path != nil {
+		r.BackupOptions.Path = types.StringValue(*resp.BackupOptions.Path)
+	} else {
+		r.BackupOptions.Path = types.StringNull()
+	}
 	r.BackupOptions.Provider = types.StringValue(resp.BackupOptions.Provider)
-	r.BackupOptions.Region = types.StringValue(resp.BackupOptions.Region)
+	if resp.BackupOptions.Region != nil {
+		r.BackupOptions.Region = types.StringValue(*resp.BackupOptions.Region)
+	} else {
+		r.BackupOptions.Region = types.StringNull()
+	}
 	r.BackupOptions.Schedule = types.StringValue(resp.BackupOptions.Schedule)
 	r.BackupOptions.SecretKey = types.StringValue(resp.BackupOptions.SecretKey)
 	r.BackupOptions.Settings = nil

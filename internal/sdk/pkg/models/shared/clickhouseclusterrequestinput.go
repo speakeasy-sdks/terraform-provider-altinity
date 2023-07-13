@@ -122,15 +122,15 @@ type ClickhouseClusterRequestInputUptimeSettings struct {
 }
 
 type ClickhouseClusterRequestInputZookeeperOptions struct {
-	Root string `json:"root"`
-	Size string `json:"size"`
-	Tag  string `json:"tag"`
+	Root string  `json:"root"`
+	Size string  `json:"size"`
+	Tag  *string `json:"tag,omitempty"`
 }
 
 type ClickhouseClusterRequestInput struct {
 	AdminPass          string                                        `json:"adminPass"`
 	AdminUser          string                                        `json:"adminUser"`
-	AlternateEndpoints []interface{}                                 `json:"alternateEndpoints"`
+	AlternateEndpoints []interface{}                                 `json:"alternateEndpoints,omitempty"`
 	Azlist             []string                                      `json:"azlist"`
 	BackupOptions      ClickhouseClusterRequestInputBackupOptions    `json:"backupOptions"`
 	DatadogSettings    ClickhouseClusterRequestInputDatadogSettings  `json:"datadogSettings"`
@@ -138,7 +138,7 @@ type ClickhouseClusterRequestInput struct {
 	DomainName         string                                        `json:"domainName"`
 	Host               string                                        `json:"host"`
 	HTTPPort           int64                                         `json:"httpPort"`
-	InternalDomainName string                                        `json:"internalDomainName"`
+	InternalDomainName *string                                       `json:"internalDomainName,omitempty"`
 	IPWhitelist        string                                        `json:"ipWhitelist"`
 	LbType             string                                        `json:"lbType"`
 	Name               string                                        `json:"name"`
@@ -150,7 +150,7 @@ type ClickhouseClusterRequestInput struct {
 	Replicas           string                                        `json:"replicas"`
 	ReplicateSchema    bool                                          `json:"replicateSchema"`
 	Secure             bool                                          `json:"secure"`
-	Shards             int64                                         `json:"shards"`
+	Shards             *int64                                        `json:"shards,omitempty"`
 	Size               int64                                         `json:"size"`
 	SSHPort            int64                                         `json:"sshPort"`
 	StorageClass       string                                        `json:"storageClass"`
@@ -158,7 +158,7 @@ type ClickhouseClusterRequestInput struct {
 	Uptime             string                                        `json:"uptime"`
 	UptimeSettings     ClickhouseClusterRequestInputUptimeSettings   `json:"uptimeSettings"`
 	Version            string                                        `json:"version"`
-	VersionImage       string                                        `json:"versionImage"`
+	VersionImage       *string                                       `json:"versionImage,omitempty"`
 	Zookeeper          string                                        `json:"zookeeper"`
 	ZookeeperOptions   ClickhouseClusterRequestInputZookeeperOptions `json:"zookeeperOptions"`
 }

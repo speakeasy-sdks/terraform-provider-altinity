@@ -186,7 +186,6 @@ components:
           required:
             - size
             - root
-            - tag
         type:
           type: string
           example: kubernetes
@@ -443,18 +442,15 @@ components:
       required:
         - replicas
         - secure
-        - versionImage
         - zookeeper
         - size
         - ipWhitelist
-        - alternateEndpoints
         - adminPass
         - nodes
         - lbType
         - nodeType
         - httpPort
         - sshPort
-        - shards
         - domainName
         - backupOptions
         - replicateSchema
@@ -464,7 +460,6 @@ components:
         - type
         - name
         - host
-        - internalDomainName
         - storageClass
         - region
         - publicEndpoint
@@ -646,11 +641,9 @@ components:
             day:
               type: integer
           required:
-            - region
             - bucket
             - schedule
             - enable
-            - path
             - keep
             - compressionFormat
             - day

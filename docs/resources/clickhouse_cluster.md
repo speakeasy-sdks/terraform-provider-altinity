@@ -16,9 +16,6 @@ ClickhouseCluster Resource
 resource "altinity_clickhouse_cluster" "my_clickhousecluster" {
   admin_pass = "...my_adminPass..."
   admin_user = "admin"
-  alternate_endpoints = [
-    "{ \"see\": \"documentation\" }",
-  ]
   azlist = [
     "us-west1-a",
   ]
@@ -48,29 +45,28 @@ resource "altinity_clickhouse_cluster" "my_clickhousecluster" {
     logs    = false
     metrics = true
   }
-  disks                = 1
-  domain_name          = "dev.speakeasyapi.altinity.cloud"
-  host                 = "localhost"
-  http_port            = 5123
-  id_environment       = "675"
-  internal_domain_name = "...my_internalDomainName..."
-  ip_whitelist         = "31.94.0.155"
-  lb_type              = "ingress"
-  name                 = "dev"
-  nodes                = 1
-  node_type            = "n2d-standard-2"
-  port                 = 9900
-  public_endpoint      = true
-  region               = "...my_region..."
-  replicas             = "1"
-  replicate_schema     = true
-  secure               = true
-  shards               = 1
-  size                 = 100
-  ssh_port             = 2222
-  storage_class        = "pd-balanced"
-  type                 = "kubernetes"
-  uptime               = "stop"
+  disks            = 1
+  domain_name      = "dev.speakeasyapi.altinity.cloud"
+  host             = "localhost"
+  http_port        = 5123
+  id_environment   = "675"
+  ip_whitelist     = "31.94.0.155"
+  lb_type          = "ingress"
+  name             = "dev"
+  nodes            = 1
+  node_type        = "n2d-standard-2"
+  port             = 9900
+  public_endpoint  = true
+  region           = "...my_region..."
+  replicas         = "1"
+  replicate_schema = true
+  secure           = true
+  shards           = 1
+  size             = 100
+  ssh_port         = 2222
+  storage_class    = "pd-balanced"
+  type             = "kubernetes"
+  uptime           = "stop"
   uptime_settings {
     inactive_hours = 24
     schedule {
@@ -132,9 +128,8 @@ resource "altinity_clickhouse_cluster" "my_clickhousecluster" {
       }
     }
   }
-  version       = "22.8.15.25.altinitystable"
-  version_image = "...my_versionImage..."
-  zookeeper     = "launch"
+  version   = "22.8.15.25.altinitystable"
+  zookeeper = "launch"
   zookeeper_options {
     root = "1"
     size = "single"
@@ -150,7 +145,6 @@ resource "altinity_clickhouse_cluster" "my_clickhousecluster" {
 
 - `admin_pass` (String, Sensitive)
 - `admin_user` (String)
-- `alternate_endpoints` (List of String)
 - `azlist` (List of String)
 - `backup_options` (Attributes) (see [below for nested schema](#nestedatt--backup_options))
 - `datadog_settings` (Attributes) (see [below for nested schema](#nestedatt--datadog_settings))
@@ -159,7 +153,6 @@ resource "altinity_clickhouse_cluster" "my_clickhousecluster" {
 - `host` (String)
 - `http_port` (Number)
 - `id_environment` (String)
-- `internal_domain_name` (String)
 - `ip_whitelist` (String)
 - `lb_type` (String)
 - `name` (String)
@@ -171,7 +164,6 @@ resource "altinity_clickhouse_cluster" "my_clickhousecluster" {
 - `replicas` (String)
 - `replicate_schema` (Boolean)
 - `secure` (Boolean)
-- `shards` (Number)
 - `size` (Number)
 - `ssh_port` (Number)
 - `storage_class` (String)
@@ -179,9 +171,15 @@ resource "altinity_clickhouse_cluster" "my_clickhousecluster" {
 - `uptime` (String)
 - `uptime_settings` (Attributes) (see [below for nested schema](#nestedatt--uptime_settings))
 - `version` (String)
-- `version_image` (String)
 - `zookeeper` (String)
 - `zookeeper_options` (Attributes) (see [below for nested schema](#nestedatt--zookeeper_options))
+
+### Optional
+
+- `alternate_endpoints` (List of String)
+- `internal_domain_name` (String)
+- `shards` (Number)
+- `version_image` (String)
 
 ### Read-Only
 
@@ -416,6 +414,9 @@ Required:
 
 - `root` (String)
 - `size` (String)
+
+Optional:
+
 - `tag` (String)
 
 
