@@ -885,7 +885,6 @@ type ClickhouseClusterResponse struct {
 	Owner                ClickhouseClusterResponseOwner           `json:"owner"`
 	QueryMonitoringURL   string                                   `json:"queryMonitoringUrl"`
 	Secure               bool                                     `json:"secure"`
-	Shards               int64                                    `json:"shards"`
 	StartupMode          string                                   `json:"startupMode"`
 	Status               string                                   `json:"status"`
 	SystemMonitoringURL  string                                   `json:"systemMonitoringUrl"`

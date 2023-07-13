@@ -86,12 +86,7 @@ func (r *ClickhouseClusterResourceModel) ToCreateSDKType() *shared.ClickhouseClu
 	replicas := r.Replicas.ValueString()
 	replicateSchema := r.ReplicateSchema.ValueBool()
 	secure := r.Secure.ValueBool()
-	shards := new(int64)
-	if !r.Shards.IsUnknown() && !r.Shards.IsNull() {
-		*shards = r.Shards.ValueInt64()
-	} else {
-		shards = nil
-	}
+	shards := r.Shards.ValueInt64()
 	size := r.Size.ValueInt64()
 	sshPort := r.SSHPort.ValueInt64()
 	storageClass := r.StorageClass.ValueString()
@@ -824,7 +819,6 @@ func (r *ClickhouseClusterResourceModel) RefreshFromCreateResponse(resp *shared.
 	r.Owner.Role.System = types.BoolValue(resp.Owner.Role.System)
 	r.QueryMonitoringURL = types.StringValue(resp.QueryMonitoringURL)
 	r.Secure = types.BoolValue(resp.Secure)
-	r.Shards = types.Int64Value(resp.Shards)
 	r.StartupMode = types.StringValue(resp.StartupMode)
 	r.Status = types.StringValue(resp.Status)
 	r.SystemMonitoringURL = types.StringValue(resp.SystemMonitoringURL)

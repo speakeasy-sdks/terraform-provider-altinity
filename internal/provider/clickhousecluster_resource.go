@@ -2151,11 +2151,10 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 				Required: true,
 			},
 			"shards": schema.Int64Attribute{
-				Computed: true,
 				PlanModifiers: []planmodifier.Int64{
 					int64planmodifier.RequiresReplace(),
 				},
-				Optional: true,
+				Required: true,
 			},
 			"size": schema.Int64Attribute{
 				PlanModifiers: []planmodifier.Int64{

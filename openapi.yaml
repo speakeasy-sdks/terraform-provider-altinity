@@ -451,6 +451,7 @@ components:
         - nodeType
         - httpPort
         - sshPort
+        - shards
         - domainName
         - backupOptions
         - replicateSchema
@@ -479,6 +480,7 @@ components:
         hasMigration:
           type: boolean
         shards:
+          x-speakeasy-ignore: true
           type: integer
         name:
           type: string

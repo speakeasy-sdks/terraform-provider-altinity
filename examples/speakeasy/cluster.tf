@@ -67,6 +67,7 @@ resource "altinity_clickhouse_cluster" "my_clickhousecluster" {
   replicas         = "1"
   replicate_schema = true
   secure           = true
+  shards           = 1
   size             = 100
   ssh_port         = 2222
   storage_class    = "pd-balanced"

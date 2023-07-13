@@ -164,6 +164,7 @@ resource "altinity_clickhouse_cluster" "my_clickhousecluster" {
 - `replicas` (String)
 - `replicate_schema` (Boolean)
 - `secure` (Boolean)
+- `shards` (Number)
 - `size` (Number)
 - `ssh_port` (Number)
 - `storage_class` (String)
@@ -178,7 +179,6 @@ resource "altinity_clickhouse_cluster" "my_clickhousecluster" {
 
 - `alternate_endpoints` (List of String)
 - `internal_domain_name` (String)
-- `shards` (Number)
 - `version_image` (String)
 
 ### Read-Only

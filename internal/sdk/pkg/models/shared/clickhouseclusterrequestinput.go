@@ -150,7 +150,7 @@ type ClickhouseClusterRequestInput struct {
 	Replicas           string                                        `json:"replicas"`
 	ReplicateSchema    bool                                          `json:"replicateSchema"`
 	Secure             bool                                          `json:"secure"`
-	Shards             *int64                                        `json:"shards,omitempty"`
+	Shards             int64                                         `json:"shards"`
 	Size               int64                                         `json:"size"`
 	SSHPort            int64                                         `json:"sshPort"`
 	StorageClass       string                                        `json:"storageClass"`
