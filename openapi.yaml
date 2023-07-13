@@ -28,6 +28,7 @@ paths:
                 properties:
                   metadata:
                     type: object
+                    x-speakeasy-ignore: true
                     properties:
                       changed:
                         type: boolean
@@ -3185,10 +3186,11 @@ components:
         - altinitySupport
   securitySchemes:
     apiKey:
-      type: http
-      scheme: bearer
-      bearerFormat: JWT
+      type: apiKey
+      in: header
+      name: X-Auth-Token
 security:
   - apiKey: []
 servers:
   - url: https://acm.altinity.cloud
+x-speakeasy-retries:

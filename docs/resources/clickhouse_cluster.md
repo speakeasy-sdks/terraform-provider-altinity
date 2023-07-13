@@ -189,7 +189,6 @@ resource "altinity_clickhouse_cluster" "my_clickhousecluster" {
 - `altinity_support` (String)
 - `can_publish` (Boolean)
 - `can_rescale` (Boolean)
-- `changed` (Boolean)
 - `cluster_monitoring_url` (String)
 - `environment` (Attributes) (see [below for nested schema](#nestedatt--environment))
 - `has_changes` (Boolean)

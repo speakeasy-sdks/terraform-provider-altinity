@@ -47,7 +47,6 @@ type ClickhouseClusterResourceModel struct {
 	BackupOptions        ClickhouseClusterResponseBackupOptions          `tfsdk:"backup_options"`
 	CanPublish           types.Bool                                      `tfsdk:"can_publish"`
 	CanRescale           types.Bool                                      `tfsdk:"can_rescale"`
-	Changed              types.Bool                                      `tfsdk:"changed"`
 	ClusterMonitoringURL types.String                                    `tfsdk:"cluster_monitoring_url"`
 	DatadogSettings      ClickhouseClusterResponseDatadogSettings        `tfsdk:"datadog_settings"`
 	Disks                types.Int64                                     `tfsdk:"disks"`
@@ -306,9 +305,6 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 				Computed: true,
 			},
 			"can_rescale": schema.BoolAttribute{
-				Computed: true,
-			},
-			"changed": schema.BoolAttribute{
 				Computed: true,
 			},
 			"cluster_monitoring_url": schema.StringAttribute{

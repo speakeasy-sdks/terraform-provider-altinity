@@ -12,14 +12,9 @@ type PostAPIIDEnvironmentClusterLaunchRequest struct {
 	IDEnvironment                 string                               `pathParam:"style=simple,explode=false,name=id_environment"`
 }
 
-type PostAPIIDEnvironmentClusterLaunch2XXApplicationJSONMetadata struct {
-	Changed bool `json:"changed"`
-}
-
 // PostAPIIDEnvironmentClusterLaunch2XXApplicationJSON - Ok
 type PostAPIIDEnvironmentClusterLaunch2XXApplicationJSON struct {
-	Data     *shared.ClickhouseClusterResponse                            `json:"data,omitempty"`
-	Metadata *PostAPIIDEnvironmentClusterLaunch2XXApplicationJSONMetadata `json:"metadata,omitempty"`
+	Data *shared.ClickhouseClusterResponse `json:"data,omitempty"`
 }
 
 type PostAPIIDEnvironmentClusterLaunchResponse struct {

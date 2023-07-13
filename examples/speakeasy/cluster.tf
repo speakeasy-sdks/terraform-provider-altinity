@@ -27,16 +27,15 @@ resource "altinity_clickhouse_cluster" "my_clickhousecluster" {
   azlist = [
     "us-west1-a",
   ]
-  backup_options {
+  backup_options = {
     arn                = "monitor"
     bucket             = "altinity-cloud-prod-000p23wu50-clickhouse-backup"
     compression_format = "tar"
-    day                = 844266
+    day                = 0
     enable             = true
-    keep               = "7"
-    path               = "pixel"
+    path               = ""
     provider           = "gcp"
-    region             = "bus"
+    region             = ""
     schedule           = "daily"
     secret_key         = "*******"
     settings = [
@@ -49,7 +48,7 @@ resource "altinity_clickhouse_cluster" "my_clickhousecluster" {
     ]
     time = "05:00"
   }
-  datadog_settings {
+  datadog_settings = {
     logs    = false
     metrics = false
   }
@@ -58,7 +57,7 @@ resource "altinity_clickhouse_cluster" "my_clickhousecluster" {
   host                 = "localhost"
   http_port            = 5123
   id_environment       = "675"
-  internal_domain_name = "bus"
+  internal_domain_name = ""
   ip_whitelist         = "31.94.0.155"
   lb_type              = "ingress"
   name                 = "dev"
@@ -76,43 +75,71 @@ resource "altinity_clickhouse_cluster" "my_clickhousecluster" {
   storage_class        = "pd-balanced"
   type                 = "kubernetes"
   uptime               = "stop"
-  uptime_settings {
+  uptime_settings = {
     inactive_hours = 24
-    schedule {
-      fri {
+    schedule = {
+      fri = {
         active  = true
         all_day = true
+        range = {
+          from = ""
+          to   = ""
+        }
       }
-      mon {
+      mon = {
         active  = true
         all_day = true
+        range = {
+          from = ""
+          to   = ""
+        }
       }
-      sat {
+      sat = {
         active  = true
         all_day = true
+        range = {
+          from = ""
+          to   = ""
+        }
       }
-      sun {
+      sun = {
         active  = true
         all_day = true
+        range = {
+          from = ""
+          to   = ""
+        }
       }
-      thu {
+      thu = {
         active  = true
         all_day = true
+        range = {
+          from = ""
+          to   = ""
+        }
       }
-      tue {
+      tue = {
         active  = true
         all_day = true
+        range = {
+          from = ""
+          to   = ""
+        }
       }
-      wed {
+      wed = {
         active  = true
         all_day = true
+        range = {
+          from = ""
+          to   = ""
+        }
       }
     }
   }
   version       = "22.8.15.25.altinitystable"
   version_image = ""
   zookeeper     = "launch"
-  zookeeper_options {
+  zookeeper_options = {
     root = "1"
     size = "single"
     tag  = ""
