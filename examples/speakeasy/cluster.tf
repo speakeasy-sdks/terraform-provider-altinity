@@ -8,16 +8,21 @@ terraform {
 }
 
 provider "altinity" {
+  api_key = var.altinity_api_key
+}
 
+variable "altinity_api_key" {
+  type      = string
+  sensitive = true
 }
 
 variable "speakeasy_admin_pass" {
-  type = "string"
+  type = string
 }
 
 resource "altinity_clickhouse_cluster" "my_clickhousecluster" {
-  admin_pass = var.speakeasy_admin_pass
-  admin_user = "admin"
+  admin_pass          = var.speakeasy_admin_pass
+  admin_user          = "admin"
   alternate_endpoints = []
   azlist = [
     "us-west1-a",

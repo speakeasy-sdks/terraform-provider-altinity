@@ -32,4 +32,5 @@ provider "altinity" {
 
 ### Optional
 
+- `api_key` (String, Sensitive)
 - `server_url` (String) Server URL (defaults to https://acm.altinity.cloud)

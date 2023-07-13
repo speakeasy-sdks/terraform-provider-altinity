@@ -14,29 +14,29 @@ ClickhouseCluster Resource
 
 ```terraform
 resource "altinity_clickhouse_cluster" "my_clickhousecluster" {
-  admin_pass = "hard drive"
+  admin_pass = "...my_adminPass..."
   admin_user = "admin"
   alternate_endpoints = [
-    "provident",
+    "{ \"see\": \"documentation\" }",
   ]
   azlist = [
     "us-west1-a",
   ]
   backup_options {
-    arn                = "monitor"
+    arn                = "...my_arn..."
     bucket             = "altinity-cloud-prod-000p23wu50-clickhouse-backup"
     compression_format = "tar"
-    day                = 844266
+    day                = 6
     enable             = true
     keep               = "7"
-    path               = "pixel"
+    path               = "...my_path..."
     provider           = "gcp"
-    region             = "bus"
+    region             = "...my_region..."
     schedule           = "daily"
     secret_key         = "*******"
     settings = [
       {
-        day    = 544883
+        day    = 7
         keep   = 1
         period = "daily"
         time   = "05:00"
@@ -46,14 +46,14 @@ resource "altinity_clickhouse_cluster" "my_clickhousecluster" {
   }
   datadog_settings {
     logs    = false
-    metrics = false
+    metrics = true
   }
   disks                = 1
   domain_name          = "dev.speakeasyapi.altinity.cloud"
   host                 = "localhost"
   http_port            = 5123
   id_environment       = "675"
-  internal_domain_name = "bus"
+  internal_domain_name = "...my_internalDomainName..."
   ip_whitelist         = "31.94.0.155"
   lb_type              = "ingress"
   name                 = "dev"
@@ -61,7 +61,7 @@ resource "altinity_clickhouse_cluster" "my_clickhousecluster" {
   node_type            = "n2d-standard-2"
   port                 = 9900
   public_endpoint      = true
-  region               = "system"
+  region               = "...my_region..."
   replicas             = "1"
   replicate_schema     = true
   secure               = true
@@ -78,67 +78,67 @@ resource "altinity_clickhouse_cluster" "my_clickhousecluster" {
         active  = true
         all_day = true
         range {
-          from = "pixel"
-          to   = "alarm"
+          from = "...my_from..."
+          to   = "...my_to..."
         }
       }
       mon {
         active  = true
         all_day = true
         range {
-          from = "interface"
-          to   = "system"
+          from = "...my_from..."
+          to   = "...my_to..."
         }
       }
       sat {
         active  = true
         all_day = true
         range {
-          from = "card"
-          to   = "circuit"
+          from = "...my_from..."
+          to   = "...my_to..."
         }
       }
       sun {
         active  = true
         all_day = true
         range {
-          from = "protocol"
-          to   = "matrix"
+          from = "...my_from..."
+          to   = "...my_to..."
         }
       }
       thu {
         active  = true
         all_day = true
         range {
-          from = "port"
-          to   = "interface"
+          from = "...my_from..."
+          to   = "...my_to..."
         }
       }
       tue {
         active  = true
         all_day = true
         range {
-          from = "sensor"
-          to   = "transmitter"
+          from = "...my_from..."
+          to   = "...my_to..."
         }
       }
       wed {
         active  = true
         all_day = true
         range {
-          from = "transmitter"
-          to   = "firewall"
+          from = "...my_from..."
+          to   = "...my_to..."
         }
       }
     }
   }
   version       = "22.8.15.25.altinitystable"
-  version_image = "sensor"
+  version_image = "...my_versionImage..."
   zookeeper     = "launch"
   zookeeper_options {
     root = "1"
     size = "single"
-    tag  = "hard drive"
+    tag  = "...my_tag..."
   }
 }
 ```
@@ -149,67 +149,67 @@ resource "altinity_clickhouse_cluster" "my_clickhousecluster" {
 ### Required
 
 - `admin_pass` (String, Sensitive)
-- `admin_user` (String) ; Example: "admin"
+- `admin_user` (String)
 - `alternate_endpoints` (List of String)
 - `azlist` (List of String)
 - `backup_options` (Attributes) (see [below for nested schema](#nestedatt--backup_options))
 - `datadog_settings` (Attributes) (see [below for nested schema](#nestedatt--datadog_settings))
-- `disks` (Number) ; Example: "1"
-- `domain_name` (String) ; Example: "dev.speakeasyapi.altinity.cloud"
-- `host` (String) ; Example: "localhost"
-- `http_port` (Number) ; Example: "5123"
-- `id_environment` (String) ; Example: "675"
+- `disks` (Number)
+- `domain_name` (String)
+- `host` (String)
+- `http_port` (Number)
+- `id_environment` (String)
 - `internal_domain_name` (String)
-- `ip_whitelist` (String) ; Example: "31.94.0.155"
-- `lb_type` (String) ; Example: "ingress"
-- `name` (String) ; Example: "dev"
-- `node_type` (String) ; Example: "n2d-standard-2"
-- `nodes` (Number) ; Example: "1"
-- `port` (Number) ; Example: "9900"
-- `public_endpoint` (Boolean) ; Example: "true"
+- `ip_whitelist` (String)
+- `lb_type` (String)
+- `name` (String)
+- `node_type` (String)
+- `nodes` (Number)
+- `port` (Number)
+- `public_endpoint` (Boolean)
 - `region` (String)
-- `replicas` (String) ; Example: "1"
-- `replicate_schema` (Boolean) ; Example: "true"
-- `secure` (Boolean) ; Example: "true"
-- `shards` (Number) ; Example: "1"
-- `size` (Number) ; Example: "100"
-- `ssh_port` (Number) ; Example: "2222"
-- `storage_class` (String) ; Example: "pd-balanced"
-- `type` (String) ; Example: "kubernetes"
-- `uptime` (String) ; Example: "stop"
+- `replicas` (String)
+- `replicate_schema` (Boolean)
+- `secure` (Boolean)
+- `shards` (Number)
+- `size` (Number)
+- `ssh_port` (Number)
+- `storage_class` (String)
+- `type` (String)
+- `uptime` (String)
 - `uptime_settings` (Attributes) (see [below for nested schema](#nestedatt--uptime_settings))
-- `version` (String) ; Example: "22.8.15.25.altinitystable"
+- `version` (String)
 - `version_image` (String)
-- `zookeeper` (String) ; Example: "launch"
+- `zookeeper` (String)
 - `zookeeper_options` (Attributes) (see [below for nested schema](#nestedatt--zookeeper_options))
 
 ### Read-Only
 
 - `alerts_settings` (Attributes) (see [below for nested schema](#nestedatt--alerts_settings))
-- `altinity_support` (String) ; Example: "system"
-- `can_publish` (Boolean) ; Example: "true"
-- `can_rescale` (Boolean) ; Example: "true"
-- `changed` (Boolean) ; Example: "true"
-- `cluster_monitoring_url` (String) ; Example: "/monitoring/675/d/clickhouse-operator/altinity-clickhouse-operator-dashboard?var-exported_namespace=altinity-cloud-managed-clickhouse&var-chi=dev&var-hostname=All"
+- `altinity_support` (String)
+- `can_publish` (Boolean)
+- `can_rescale` (Boolean)
+- `changed` (Boolean)
+- `cluster_monitoring_url` (String)
 - `environment` (Attributes) (see [below for nested schema](#nestedatt--environment))
 - `has_changes` (Boolean)
 - `has_migration` (Boolean)
-- `id` (String) ; Example: "3958"
-- `id_owner` (String) ; Example: "1597"
+- `id` (String) The ID of this resource.
+- `id_owner` (String)
 - `initial_action` (Attributes) (see [below for nested schema](#nestedatt--initial_action))
-- `internal_name` (String) ; Example: "dev"
+- `internal_name` (String)
 - `layouts` (Attributes) (see [below for nested schema](#nestedatt--layouts))
-- `logs_monitoring_url` (String) ; Example: "/monitoring/675/d/logs-dashboard/logs-dashboard?var-chi=dev"
+- `logs_monitoring_url` (String)
 - `migration_progress` (Number)
 - `mysql_protocol` (Boolean)
-- `normalized_name` (String) ; Example: "dev"
+- `normalized_name` (String)
 - `options` (Attributes) (see [below for nested schema](#nestedatt--options))
 - `owner` (Attributes) (see [below for nested schema](#nestedatt--owner))
-- `query_monitoring_url` (String) ; Example: "/monitoring/675/d/clickhouse-queries/clickhouse-in-kubernetes-queries?var-exported_namespace=altinity-cloud-managed-clickhouse&var-chi=dev&var-hostname=All"
-- `startup_mode` (String) ; Example: "direct"
-- `status` (String) ; Example: "pending"
-- `system_monitoring_url` (String) ; Example: "/monitoring/675/d/kQsMXaG4z/system-load?var-chi=dev"
-- `system_version` (String) ; Example: "23.3.33"
+- `query_monitoring_url` (String)
+- `startup_mode` (String)
+- `status` (String)
+- `system_monitoring_url` (String)
+- `system_version` (String)
 
 <a id="nestedatt--backup_options"></a>
 ### Nested Schema for `backup_options`
@@ -217,21 +217,21 @@ resource "altinity_clickhouse_cluster" "my_clickhousecluster" {
 Required:
 
 - `arn` (String)
-- `bucket` (String) ; Example: "altinity-cloud-prod-000p23wu50-clickhouse-backup"
-- `compression_format` (String) ; Example: "tar"
+- `bucket` (String)
+- `compression_format` (String)
 - `day` (Number)
-- `enable` (Boolean) ; Example: "true"
+- `enable` (Boolean)
 - `path` (String)
-- `provider` (String) ; Example: "gcp"
+- `provider` (String)
 - `region` (String)
-- `schedule` (String) ; Example: "daily"
-- `secret_key` (String, Sensitive) ; Example: "*******"
+- `schedule` (String)
+- `secret_key` (String, Sensitive)
 - `settings` (Attributes List) (see [below for nested schema](#nestedatt--backup_options--settings))
-- `time` (String) ; Example: "05:00"
+- `time` (String)
 
 Read-Only:
 
-- `keep` (String) ; Example: "7"
+- `keep` (String)
 
 <a id="nestedatt--backup_options--settings"></a>
 ### Nested Schema for `backup_options.settings`
@@ -239,9 +239,9 @@ Read-Only:
 Required:
 
 - `day` (Number)
-- `keep` (Number) ; Example: "1"
-- `period` (String) ; Example: "daily"
-- `time` (String) ; Example: "05:00"
+- `keep` (Number)
+- `period` (String)
+- `time` (String)
 
 
 
@@ -259,7 +259,7 @@ Required:
 
 Required:
 
-- `inactive_hours` (Number) ; Example: "24"
+- `inactive_hours` (Number)
 - `schedule` (Attributes) (see [below for nested schema](#nestedatt--uptime_settings--schedule))
 
 <a id="nestedatt--uptime_settings--schedule"></a>
@@ -280,8 +280,8 @@ Required:
 
 Required:
 
-- `active` (Boolean) ; Example: "true"
-- `all_day` (Boolean) ; Example: "true"
+- `active` (Boolean)
+- `all_day` (Boolean)
 - `range` (Attributes) (see [below for nested schema](#nestedatt--uptime_settings--schedule--fri--range))
 
 <a id="nestedatt--uptime_settings--schedule--fri--range"></a>
@@ -299,8 +299,8 @@ Required:
 
 Required:
 
-- `active` (Boolean) ; Example: "true"
-- `all_day` (Boolean) ; Example: "true"
+- `active` (Boolean)
+- `all_day` (Boolean)
 - `range` (Attributes) (see [below for nested schema](#nestedatt--uptime_settings--schedule--mon--range))
 
 <a id="nestedatt--uptime_settings--schedule--mon--range"></a>
@@ -318,8 +318,8 @@ Required:
 
 Required:
 
-- `active` (Boolean) ; Example: "true"
-- `all_day` (Boolean) ; Example: "true"
+- `active` (Boolean)
+- `all_day` (Boolean)
 - `range` (Attributes) (see [below for nested schema](#nestedatt--uptime_settings--schedule--sat--range))
 
 <a id="nestedatt--uptime_settings--schedule--sat--range"></a>
@@ -337,8 +337,8 @@ Required:
 
 Required:
 
-- `active` (Boolean) ; Example: "true"
-- `all_day` (Boolean) ; Example: "true"
+- `active` (Boolean)
+- `all_day` (Boolean)
 - `range` (Attributes) (see [below for nested schema](#nestedatt--uptime_settings--schedule--sun--range))
 
 <a id="nestedatt--uptime_settings--schedule--sun--range"></a>
@@ -356,8 +356,8 @@ Required:
 
 Required:
 
-- `active` (Boolean) ; Example: "true"
-- `all_day` (Boolean) ; Example: "true"
+- `active` (Boolean)
+- `all_day` (Boolean)
 - `range` (Attributes) (see [below for nested schema](#nestedatt--uptime_settings--schedule--thu--range))
 
 <a id="nestedatt--uptime_settings--schedule--thu--range"></a>
@@ -375,8 +375,8 @@ Required:
 
 Required:
 
-- `active` (Boolean) ; Example: "true"
-- `all_day` (Boolean) ; Example: "true"
+- `active` (Boolean)
+- `all_day` (Boolean)
 - `range` (Attributes) (see [below for nested schema](#nestedatt--uptime_settings--schedule--tue--range))
 
 <a id="nestedatt--uptime_settings--schedule--tue--range"></a>
@@ -394,8 +394,8 @@ Required:
 
 Required:
 
-- `active` (Boolean) ; Example: "true"
-- `all_day` (Boolean) ; Example: "true"
+- `active` (Boolean)
+- `all_day` (Boolean)
 - `range` (Attributes) (see [below for nested schema](#nestedatt--uptime_settings--schedule--wed--range))
 
 <a id="nestedatt--uptime_settings--schedule--wed--range"></a>
@@ -415,8 +415,8 @@ Required:
 
 Required:
 
-- `root` (String) ; Example: "1"
-- `size` (String) ; Example: "single"
+- `root` (String)
+- `size` (String)
 - `tag` (String)
 
 
@@ -472,44 +472,44 @@ Read-Only:
 
 Read-Only:
 
-- `auto_push` (Boolean) ; Example: "true"
-- `auto_zk_push` (String) ; Example: "1"
+- `auto_push` (Boolean)
+- `auto_zk_push` (String)
 - `aws_settings_auto` (Boolean)
 - `backup_options` (Attributes) (see [below for nested schema](#nestedatt--environment--backup_options))
-- `core_cidr` (String) ; Example: "34.238.65.247,44.195.72.25,100.24.75.12,10.0.0.0/8,172.16.0.0/12,192.168.0.0/16,10.128.0.0/21"
-- `created` (String) ; Example: "2023-06-29 11:48:58"
+- `core_cidr` (String)
+- `created` (String)
 - `dashboard_url` (String)
 - `datadog_settings` (Attributes) (see [below for nested schema](#nestedatt--environment--datadog_settings))
-- `domain` (String) ; Example: "speakeasyapi.altinity.cloud"
-- `external_dns` (String) ; Example: "1"
-- `id` (String) ; Example: "675"
-- `id_owner` (String) ; Example: "104"
+- `domain` (String)
+- `external_dns` (String)
+- `id` (String)
+- `id_owner` (String)
 - `is_anywhere` (Boolean)
-- `kube_api_url` (String) ; Example: "https://k8s.speakeasyapi.altinity.cloud"
+- `kube_api_url` (String)
 - `kube_auth_options` (Attributes) (see [below for nested schema](#nestedatt--environment--kube_auth_options))
-- `kube_check` (String) ; Example: "2023-07-04 13:58:01.112731"
-- `kube_cho_version` (String) ; Example: "0.21.1"
-- `kube_lb_type` (String) ; Example: "ingress"
-- `kube_managed_p_vs` (Boolean) ; Example: "true"
-- `kube_namespace` (String) ; Example: "altinity-cloud-managed-clickhouse"
+- `kube_check` (String)
+- `kube_cho_version` (String)
+- `kube_lb_type` (String)
+- `kube_managed_p_vs` (Boolean)
+- `kube_namespace` (String)
 - `kube_namespace_manage` (Boolean)
-- `kube_provider` (String) ; Example: "gcp"
-- `kube_startup_mode` (String) ; Example: "direct"
+- `kube_provider` (String)
+- `kube_startup_mode` (String)
 - `kube_token` (String, Sensitive)
-- `listen_check` (String) ; Example: "2023-07-04 11:42:01"
+- `listen_check` (String)
 - `logs_storage` (Attributes) (see [below for nested schema](#nestedatt--environment--logs_storage))
-- `monitoring` (Boolean) ; Example: "true"
+- `monitoring` (Boolean)
 - `monitoring_info` (Attributes) (see [below for nested schema](#nestedatt--environment--monitoring_info))
-- `monitoring_url` (String) ; Example: "https://b3teh6ah22y6rjpb6y4d.speakeasyapi.altinity.cloud"
-- `name` (String) ; Example: "speakeasyapi"
+- `monitoring_url` (String)
+- `name` (String)
 - `options` (Attributes) (see [below for nested schema](#nestedatt--environment--options))
 - `pass` (String, Sensitive)
 - `resource_limits` (Attributes) (see [below for nested schema](#nestedatt--environment--resource_limits))
 - `sni_proxy_for_ch` (Boolean)
 - `ssl_certificate_arn` (String)
-- `status` (String) ; Example: "online"
-- `type` (String) ; Example: "kubernetes"
-- `user` (String) ; Example: "clickhouse_operator"
+- `status` (String)
+- `type` (String)
+- `user` (String)
 - `vpc_endpoints` (Boolean)
 
 <a id="nestedatt--environment--backup_options"></a>
@@ -517,17 +517,17 @@ Read-Only:
 
 Read-Only:
 
-- `bucket` (String) ; Example: "altinity-cloud-prod-000p23wu50-clickhouse-backup"
-- `compression_format` (String) ; Example: "tar"
+- `bucket` (String)
+- `compression_format` (String)
 - `day` (Number)
-- `enable` (Boolean) ; Example: "true"
-- `keep` (String) ; Example: "7"
+- `enable` (Boolean)
+- `keep` (String)
 - `path` (String)
-- `provider` (String) ; Example: "gcp"
+- `provider` (String)
 - `region` (String)
-- `schedule` (String) ; Example: "daily"
+- `schedule` (String)
 - `secret_key` (String, Sensitive)
-- `time` (String) ; Example: "05:00"
+- `time` (String)
 
 
 <a id="nestedatt--environment--datadog_settings"></a>
@@ -548,7 +548,7 @@ Read-Only:
 - `ca_cert` (String)
 - `client_cert` (String)
 - `client_key` (String)
-- `type` (String) ; Example: "token"
+- `type` (String)
 
 
 <a id="nestedatt--environment--logs_storage"></a>
@@ -576,8 +576,8 @@ Read-Only:
 
 Read-Only:
 
-- `uid` (String) ; Example: "clickhouse-operator"
-- `url` (String) ; Example: "/monitoring/675/d/clickhouse-operator/altinity-clickhouse-operator-dashboard"
+- `uid` (String)
+- `url` (String)
 
 
 <a id="nestedatt--environment--monitoring_info--db_clickhouse_in_kubernetes_queries"></a>
@@ -585,8 +585,8 @@ Read-Only:
 
 Read-Only:
 
-- `uid` (String) ; Example: "clickhouse-queries"
-- `url` (String) ; Example: "/monitoring/675/d/clickhouse-queries/clickhouse-in-kubernetes-queries"
+- `uid` (String)
+- `url` (String)
 
 
 <a id="nestedatt--environment--monitoring_info--db_logs_dashboard"></a>
@@ -594,8 +594,8 @@ Read-Only:
 
 Read-Only:
 
-- `uid` (String) ; Example: "logs-dashboard"
-- `url` (String) ; Example: "/monitoring/675/d/logs-dashboard/logs-dashboard"
+- `uid` (String)
+- `url` (String)
 
 
 <a id="nestedatt--environment--monitoring_info--db_system_load"></a>
@@ -603,8 +603,8 @@ Read-Only:
 
 Read-Only:
 
-- `uid` (String) ; Example: "kQsMXaG4z"
-- `url` (String) ; Example: "/monitoring/675/d/kQsMXaG4z/system-load"
+- `uid` (String)
+- `url` (String)
 
 
 <a id="nestedatt--environment--monitoring_info--db_zookeeper_dashboard"></a>
@@ -612,8 +612,8 @@ Read-Only:
 
 Read-Only:
 
-- `uid` (String) ; Example: "zookeeper"
-- `url` (String) ; Example: "/monitoring/675/d/zookeeper/zookeeper-dashboard"
+- `uid` (String)
+- `url` (String)
 
 
 
@@ -623,8 +623,8 @@ Read-Only:
 Read-Only:
 
 - `azlist` (List of String)
-- `network` (String) ; Example: "0.0.0.0/0"
-- `size_multiplier` (String) ; Example: "10"
+- `network` (String)
+- `size_multiplier` (String)
 
 
 <a id="nestedatt--environment--resource_limits"></a>
@@ -632,13 +632,13 @@ Read-Only:
 
 Read-Only:
 
-- `cpu` (String) ; Example: "16"
-- `memory` (String) ; Example: "0"
+- `cpu` (String)
+- `memory` (String)
 - `nodes` (Number)
-- `replicas` (Number) ; Example: "3"
-- `shards` (Number) ; Example: "20"
-- `storage` (String) ; Example: "500"
-- `volume_rescale` (Number) ; Example: "10"
+- `replicas` (Number)
+- `shards` (Number)
+- `storage` (String)
+- `volume_rescale` (Number)
 
 
 
@@ -647,8 +647,8 @@ Read-Only:
 
 Read-Only:
 
-- `user` (String) ; Example: "system"
-- `user_email` (String) ; Example: "system"
+- `user` (String)
+- `user_email` (String)
 - `user_id` (Number)
 
 
@@ -668,33 +668,33 @@ Read-Only:
 - `alerts_settings` (Attributes) (see [below for nested schema](#nestedatt--layouts--replicated--alerts_settings))
 - `alternate_endpoints` (List of String)
 - `backup_options` (Attributes) (see [below for nested schema](#nestedatt--layouts--replicated--backup_options))
-- `can_publish` (Boolean) ; Example: "true"
-- `can_rescale` (Boolean) ; Example: "true"
-- `cluster_monitoring_url` (String) ; Example: "/monitoring/675/d/clickhouse-operator/altinity-clickhouse-operator-dashboard?var-exported_namespace=altinity-cloud-managed-clickhouse&var-chi=all-replicated&var-hostname=All"
+- `can_publish` (Boolean)
+- `can_rescale` (Boolean)
+- `cluster_monitoring_url` (String)
 - `datadog_settings` (Attributes) (see [below for nested schema](#nestedatt--layouts--replicated--datadog_settings))
 - `environment` (Attributes) (see [below for nested schema](#nestedatt--layouts--replicated--environment))
 - `has_changes` (Boolean)
 - `has_migration` (Boolean)
-- `id` (String) ; Example: "3960"
-- `id_environment` (String) ; Example: "675"
-- `id_owner` (String) ; Example: "1597"
-- `id_parent` (String) ; Example: "3958"
+- `id` (String)
+- `id_environment` (String)
+- `id_owner` (String)
+- `id_parent` (String)
 - `initial_action` (Attributes) (see [below for nested schema](#nestedatt--layouts--replicated--initial_action))
-- `internal_name` (String) ; Example: "all-replicated"
+- `internal_name` (String)
 - `layouts` (List of String)
-- `logs_monitoring_url` (String) ; Example: "/monitoring/675/d/logs-dashboard/logs-dashboard?var-chi=all-replicated"
+- `logs_monitoring_url` (String)
 - `migration_progress` (Number)
 - `mysql_protocol` (Boolean)
-- `name` (String) ; Example: "all-replicated"
-- `normalized_name` (String) ; Example: "all-replicated"
+- `name` (String)
+- `normalized_name` (String)
 - `owner` (Attributes) (see [below for nested schema](#nestedatt--layouts--replicated--owner))
-- `query_monitoring_url` (String) ; Example: "/monitoring/675/d/clickhouse-queries/clickhouse-in-kubernetes-queries?var-exported_namespace=altinity-cloud-managed-clickhouse&var-chi=all-replicated&var-hostname=All"
+- `query_monitoring_url` (String)
 - `replicas` (Number)
 - `secure` (Boolean)
 - `shards` (Number)
-- `system_monitoring_url` (String) ; Example: "/monitoring/675/d/kQsMXaG4z/system-load?var-chi=all-replicated"
-- `system_version` (String) ; Example: "23.3.33"
-- `uptime` (String) ; Example: "always"
+- `system_monitoring_url` (String)
+- `system_version` (String)
+- `uptime` (String)
 - `uptime_settings` (List of String)
 - `version` (String)
 
@@ -750,17 +750,17 @@ Read-Only:
 
 Read-Only:
 
-- `bucket` (String) ; Example: "altinity-cloud-prod-000p23wu50-clickhouse-backup"
-- `compression_format` (String) ; Example: "tar"
+- `bucket` (String)
+- `compression_format` (String)
 - `day` (Number)
-- `enable` (Boolean) ; Example: "true"
-- `keep` (String) ; Example: "7"
+- `enable` (Boolean)
+- `keep` (String)
 - `path` (String)
-- `provider` (String) ; Example: "gcp"
+- `provider` (String)
 - `region` (String)
-- `schedule` (String) ; Example: "daily"
+- `schedule` (String)
 - `secret_key` (String, Sensitive)
-- `time` (String) ; Example: "05:00"
+- `time` (String)
 
 
 <a id="nestedatt--layouts--replicated--datadog_settings"></a>
@@ -777,44 +777,44 @@ Read-Only:
 
 Read-Only:
 
-- `auto_push` (Boolean) ; Example: "true"
-- `auto_zk_push` (String) ; Example: "1"
+- `auto_push` (Boolean)
+- `auto_zk_push` (String)
 - `aws_settings_auto` (Boolean)
 - `backup_options` (Attributes) (see [below for nested schema](#nestedatt--layouts--replicated--environment--backup_options))
-- `core_cidr` (String) ; Example: "34.238.65.247,44.195.72.25,100.24.75.12,10.0.0.0/8,172.16.0.0/12,192.168.0.0/16,10.128.0.0/21"
-- `created` (String) ; Example: "2023-06-29 11:48:58"
+- `core_cidr` (String)
+- `created` (String)
 - `dashboard_url` (String)
 - `datadog_settings` (Attributes) (see [below for nested schema](#nestedatt--layouts--replicated--environment--datadog_settings))
-- `domain` (String) ; Example: "speakeasyapi.altinity.cloud"
-- `external_dns` (String) ; Example: "1"
-- `id` (String) ; Example: "675"
-- `id_owner` (String) ; Example: "104"
+- `domain` (String)
+- `external_dns` (String)
+- `id` (String)
+- `id_owner` (String)
 - `is_anywhere` (Boolean)
-- `kube_api_url` (String) ; Example: "https://k8s.speakeasyapi.altinity.cloud"
+- `kube_api_url` (String)
 - `kube_auth_options` (Attributes) (see [below for nested schema](#nestedatt--layouts--replicated--environment--kube_auth_options))
-- `kube_check` (String) ; Example: "2023-07-04 13:58:01.112731"
-- `kube_cho_version` (String) ; Example: "0.21.1"
-- `kube_lb_type` (String) ; Example: "ingress"
-- `kube_managed_p_vs` (Boolean) ; Example: "true"
-- `kube_namespace` (String) ; Example: "altinity-cloud-managed-clickhouse"
+- `kube_check` (String)
+- `kube_cho_version` (String)
+- `kube_lb_type` (String)
+- `kube_managed_p_vs` (Boolean)
+- `kube_namespace` (String)
 - `kube_namespace_manage` (Boolean)
-- `kube_provider` (String) ; Example: "gcp"
-- `kube_startup_mode` (String) ; Example: "direct"
+- `kube_provider` (String)
+- `kube_startup_mode` (String)
 - `kube_token` (String, Sensitive)
-- `listen_check` (String) ; Example: "2023-07-04 11:42:01"
+- `listen_check` (String)
 - `logs_storage` (Attributes) (see [below for nested schema](#nestedatt--layouts--replicated--environment--logs_storage))
-- `monitoring` (Boolean) ; Example: "true"
+- `monitoring` (Boolean)
 - `monitoring_info` (Attributes) (see [below for nested schema](#nestedatt--layouts--replicated--environment--monitoring_info))
-- `monitoring_url` (String) ; Example: "https://b3teh6ah22y6rjpb6y4d.speakeasyapi.altinity.cloud"
-- `name` (String) ; Example: "speakeasyapi"
+- `monitoring_url` (String)
+- `name` (String)
 - `options` (Attributes) (see [below for nested schema](#nestedatt--layouts--replicated--environment--options))
 - `pass` (String, Sensitive)
 - `resource_limits` (Attributes) (see [below for nested schema](#nestedatt--layouts--replicated--environment--resource_limits))
 - `sni_proxy_for_ch` (Boolean)
 - `ssl_certificate_arn` (String)
-- `status` (String) ; Example: "online"
-- `type` (String) ; Example: "kubernetes"
-- `user` (String) ; Example: "clickhouse_operator"
+- `status` (String)
+- `type` (String)
+- `user` (String)
 - `vpc_endpoints` (Boolean)
 
 <a id="nestedatt--layouts--replicated--environment--backup_options"></a>
@@ -822,17 +822,17 @@ Read-Only:
 
 Read-Only:
 
-- `bucket` (String) ; Example: "altinity-cloud-prod-000p23wu50-clickhouse-backup"
-- `compression_format` (String) ; Example: "tar"
+- `bucket` (String)
+- `compression_format` (String)
 - `day` (Number)
-- `enable` (Boolean) ; Example: "true"
-- `keep` (String) ; Example: "7"
+- `enable` (Boolean)
+- `keep` (String)
 - `path` (String)
-- `provider` (String) ; Example: "gcp"
+- `provider` (String)
 - `region` (String)
-- `schedule` (String) ; Example: "daily"
+- `schedule` (String)
 - `secret_key` (String, Sensitive)
-- `time` (String) ; Example: "05:00"
+- `time` (String)
 
 
 <a id="nestedatt--layouts--replicated--environment--datadog_settings"></a>
@@ -853,7 +853,7 @@ Read-Only:
 - `ca_cert` (String)
 - `client_cert` (String)
 - `client_key` (String)
-- `type` (String) ; Example: "token"
+- `type` (String)
 
 
 <a id="nestedatt--layouts--replicated--environment--logs_storage"></a>
@@ -881,8 +881,8 @@ Read-Only:
 
 Read-Only:
 
-- `uid` (String) ; Example: "clickhouse-operator"
-- `url` (String) ; Example: "/monitoring/675/d/clickhouse-operator/altinity-clickhouse-operator-dashboard"
+- `uid` (String)
+- `url` (String)
 
 
 <a id="nestedatt--layouts--replicated--environment--vpc_endpoints--db_clickhouse_in_kubernetes_queries"></a>
@@ -890,8 +890,8 @@ Read-Only:
 
 Read-Only:
 
-- `uid` (String) ; Example: "clickhouse-queries"
-- `url` (String) ; Example: "/monitoring/675/d/clickhouse-queries/clickhouse-in-kubernetes-queries"
+- `uid` (String)
+- `url` (String)
 
 
 <a id="nestedatt--layouts--replicated--environment--vpc_endpoints--db_logs_dashboard"></a>
@@ -899,8 +899,8 @@ Read-Only:
 
 Read-Only:
 
-- `uid` (String) ; Example: "logs-dashboard"
-- `url` (String) ; Example: "/monitoring/675/d/logs-dashboard/logs-dashboard"
+- `uid` (String)
+- `url` (String)
 
 
 <a id="nestedatt--layouts--replicated--environment--vpc_endpoints--db_system_load"></a>
@@ -908,8 +908,8 @@ Read-Only:
 
 Read-Only:
 
-- `uid` (String) ; Example: "kQsMXaG4z"
-- `url` (String) ; Example: "/monitoring/675/d/kQsMXaG4z/system-load"
+- `uid` (String)
+- `url` (String)
 
 
 <a id="nestedatt--layouts--replicated--environment--vpc_endpoints--db_zookeeper_dashboard"></a>
@@ -917,8 +917,8 @@ Read-Only:
 
 Read-Only:
 
-- `uid` (String) ; Example: "zookeeper"
-- `url` (String) ; Example: "/monitoring/675/d/zookeeper/zookeeper-dashboard"
+- `uid` (String)
+- `url` (String)
 
 
 
@@ -928,8 +928,8 @@ Read-Only:
 Read-Only:
 
 - `azlist` (List of String)
-- `network` (String) ; Example: "0.0.0.0/0"
-- `size_multiplier` (String) ; Example: "10"
+- `network` (String)
+- `size_multiplier` (String)
 
 
 <a id="nestedatt--layouts--replicated--environment--resource_limits"></a>
@@ -937,13 +937,13 @@ Read-Only:
 
 Read-Only:
 
-- `cpu` (String) ; Example: "16"
-- `memory` (String) ; Example: "0"
+- `cpu` (String)
+- `memory` (String)
 - `nodes` (Number)
-- `replicas` (Number) ; Example: "3"
-- `shards` (Number) ; Example: "20"
-- `storage` (String) ; Example: "500"
-- `volume_rescale` (Number) ; Example: "10"
+- `replicas` (Number)
+- `shards` (Number)
+- `storage` (String)
+- `volume_rescale` (Number)
 
 
 
@@ -952,8 +952,8 @@ Read-Only:
 
 Read-Only:
 
-- `user` (String) ; Example: "system"
-- `user_email` (String) ; Example: "system"
+- `user` (String)
+- `user_email` (String)
 - `user_id` (Number)
 
 
@@ -962,14 +962,14 @@ Read-Only:
 
 Read-Only:
 
-- `backup_tool` (String) ; Example: "altinity/clickhouse-backup:2.1.3"
+- `backup_tool` (String)
 - `blocked` (Boolean)
 - `dark_theme` (Boolean)
-- `email` (String) ; Example: "thomas@speakeasyapi.dev"
-- `id` (String) ; Example: "1597"
-- `id_organization` (String) ; Example: "508"
-- `id_role` (String) ; Example: "3"
-- `name` (String) ; Example: "Thomas Rooney"
+- `email` (String)
+- `id` (String)
+- `id_organization` (String)
+- `id_role` (String)
+- `name` (String)
 - `organization` (Attributes) (see [below for nested schema](#nestedatt--layouts--replicated--owner--organization))
 - `origins` (String)
 - `password` (String, Sensitive)
@@ -984,16 +984,16 @@ Read-Only:
 - `blocked` (Boolean)
 - `blocked_api` (Boolean)
 - `blocked_password` (Boolean)
-- `company_name` (String) ; Example: "Speakeasy API"
-- `email_domain` (String) ; Example: "speakeasyapi.dev"
+- `company_name` (String)
+- `email_domain` (String)
 - `expired` (Boolean)
-- `id` (String) ; Example: "508"
-- `id_default_user_role` (String) ; Example: "6"
-- `id_owner` (String) ; Example: "104"
-- `name` (String) ; Example: "Speakeasy API"
+- `id` (String)
+- `id_default_user_role` (String)
+- `id_owner` (String)
+- `name` (String)
 - `opened` (Boolean)
-- `trial` (Boolean) ; Example: "true"
-- `trial_expiry` (String) ; Example: "2023-07-13 00:00:00"
+- `trial` (Boolean)
+- `trial_expiry` (String)
 
 
 <a id="nestedatt--layouts--replicated--owner--role"></a>
@@ -1001,19 +1001,19 @@ Read-Only:
 
 Read-Only:
 
-- `id` (String) ; Example: "3"
-- `name` (String) ; Example: "orgadmin"
+- `id` (String)
+- `name` (String)
 - `rights` (Attributes List) (see [below for nested schema](#nestedatt--layouts--replicated--owner--role--rights))
-- `system` (Boolean) ; Example: "true"
+- `system` (Boolean)
 
 <a id="nestedatt--layouts--replicated--owner--role--rights"></a>
 ### Nested Schema for `layouts.replicated.owner.role.rights`
 
 Read-Only:
 
-- `access` (String) ; Example: "deny"
-- `action` (String) ; Example: "actionEditRole"
-- `class` (String) ; Example: "Accounts"
+- `access` (String)
+- `action` (String)
+- `class` (String)
 
 
 
@@ -1027,34 +1027,34 @@ Read-Only:
 - `alerts_settings` (Attributes) (see [below for nested schema](#nestedatt--layouts--sharded--alerts_settings))
 - `alternate_endpoints` (List of String)
 - `backup_options` (Attributes) (see [below for nested schema](#nestedatt--layouts--sharded--backup_options))
-- `can_publish` (Boolean) ; Example: "true"
-- `can_rescale` (Boolean) ; Example: "true"
-- `cluster_monitoring_url` (String) ; Example: "/monitoring/675/d/clickhouse-operator/altinity-clickhouse-operator-dashboard?var-exported_namespace=altinity-cloud-managed-clickhouse&var-chi=all-sharded&var-hostname=All"
+- `can_publish` (Boolean)
+- `can_rescale` (Boolean)
+- `cluster_monitoring_url` (String)
 - `datadog_settings` (Attributes) (see [below for nested schema](#nestedatt--layouts--sharded--datadog_settings))
 - `environment` (Attributes) (see [below for nested schema](#nestedatt--layouts--sharded--environment))
 - `has_changes` (Boolean)
 - `has_migration` (Boolean)
-- `id` (String) ; Example: "3959"
-- `id_environment` (String) ; Example: "675"
-- `id_owner` (String) ; Example: "1597"
-- `id_parent` (String) ; Example: "3958"
+- `id` (String)
+- `id_environment` (String)
+- `id_owner` (String)
+- `id_parent` (String)
 - `initial_action` (Attributes) (see [below for nested schema](#nestedatt--layouts--sharded--initial_action))
-- `internal_name` (String) ; Example: "all-sharded"
+- `internal_name` (String)
 - `layouts` (List of String)
-- `logs_monitoring_url` (String) ; Example: "/monitoring/675/d/logs-dashboard/logs-dashboard?var-chi=all-sharded"
+- `logs_monitoring_url` (String)
 - `migration_progress` (Number)
 - `mysql_protocol` (Boolean)
-- `name` (String) ; Example: "all-sharded"
+- `name` (String)
 - `nodes` (List of String)
-- `normalized_name` (String) ; Example: "all-sharded"
+- `normalized_name` (String)
 - `owner` (Attributes) (see [below for nested schema](#nestedatt--layouts--sharded--owner))
-- `query_monitoring_url` (String) ; Example: "/monitoring/675/d/clickhouse-queries/clickhouse-in-kubernetes-queries?var-exported_namespace=altinity-cloud-managed-clickhouse&var-chi=all-sharded&var-hostname=All"
+- `query_monitoring_url` (String)
 - `replicas` (Number)
 - `secure` (Boolean)
 - `shards` (Number)
-- `system_monitoring_url` (String) ; Example: "/monitoring/675/d/kQsMXaG4z/system-load?var-chi=all-sharded"
-- `system_version` (String) ; Example: "23.3.33"
-- `uptime` (String) ; Example: "always"
+- `system_monitoring_url` (String)
+- `system_version` (String)
+- `uptime` (String)
 - `uptime_settings` (List of String)
 - `version` (String)
 
@@ -1110,17 +1110,17 @@ Read-Only:
 
 Read-Only:
 
-- `bucket` (String) ; Example: "altinity-cloud-prod-000p23wu50-clickhouse-backup"
-- `compression_format` (String) ; Example: "tar"
+- `bucket` (String)
+- `compression_format` (String)
 - `day` (Number)
-- `enable` (Boolean) ; Example: "true"
-- `keep` (String) ; Example: "7"
+- `enable` (Boolean)
+- `keep` (String)
 - `path` (String)
-- `provider` (String) ; Example: "gcp"
+- `provider` (String)
 - `region` (String)
-- `schedule` (String) ; Example: "daily"
+- `schedule` (String)
 - `secret_key` (String, Sensitive)
-- `time` (String) ; Example: "05:00"
+- `time` (String)
 
 
 <a id="nestedatt--layouts--sharded--datadog_settings"></a>
@@ -1137,44 +1137,44 @@ Read-Only:
 
 Read-Only:
 
-- `auto_push` (Boolean) ; Example: "true"
-- `auto_zk_push` (String) ; Example: "1"
+- `auto_push` (Boolean)
+- `auto_zk_push` (String)
 - `aws_settings_auto` (Boolean)
 - `backup_options` (Attributes) (see [below for nested schema](#nestedatt--layouts--sharded--environment--backup_options))
-- `core_cidr` (String) ; Example: "34.238.65.247,44.195.72.25,100.24.75.12,10.0.0.0/8,172.16.0.0/12,192.168.0.0/16,10.128.0.0/21"
-- `created` (String) ; Example: "2023-06-29 11:48:58"
+- `core_cidr` (String)
+- `created` (String)
 - `dashboard_url` (String)
 - `datadog_settings` (Attributes) (see [below for nested schema](#nestedatt--layouts--sharded--environment--datadog_settings))
-- `domain` (String) ; Example: "speakeasyapi.altinity.cloud"
-- `external_dns` (String) ; Example: "1"
-- `id` (String) ; Example: "675"
-- `id_owner` (String) ; Example: "104"
+- `domain` (String)
+- `external_dns` (String)
+- `id` (String)
+- `id_owner` (String)
 - `is_anywhere` (Boolean)
-- `kube_api_url` (String) ; Example: "https://k8s.speakeasyapi.altinity.cloud"
+- `kube_api_url` (String)
 - `kube_auth_options` (Attributes) (see [below for nested schema](#nestedatt--layouts--sharded--environment--kube_auth_options))
-- `kube_check` (String) ; Example: "2023-07-04 13:58:01.112731"
-- `kube_cho_version` (String) ; Example: "0.21.1"
-- `kube_lb_type` (String) ; Example: "ingress"
-- `kube_managed_p_vs` (Boolean) ; Example: "true"
-- `kube_namespace` (String) ; Example: "altinity-cloud-managed-clickhouse"
+- `kube_check` (String)
+- `kube_cho_version` (String)
+- `kube_lb_type` (String)
+- `kube_managed_p_vs` (Boolean)
+- `kube_namespace` (String)
 - `kube_namespace_manage` (Boolean)
-- `kube_provider` (String) ; Example: "gcp"
-- `kube_startup_mode` (String) ; Example: "direct"
+- `kube_provider` (String)
+- `kube_startup_mode` (String)
 - `kube_token` (String, Sensitive)
-- `listen_check` (String) ; Example: "2023-07-04 11:42:01"
+- `listen_check` (String)
 - `logs_storage` (Attributes) (see [below for nested schema](#nestedatt--layouts--sharded--environment--logs_storage))
-- `monitoring` (Boolean) ; Example: "true"
+- `monitoring` (Boolean)
 - `monitoring_info` (Attributes) (see [below for nested schema](#nestedatt--layouts--sharded--environment--monitoring_info))
-- `monitoring_url` (String) ; Example: "https://b3teh6ah22y6rjpb6y4d.speakeasyapi.altinity.cloud"
-- `name` (String) ; Example: "speakeasyapi"
+- `monitoring_url` (String)
+- `name` (String)
 - `options` (Attributes) (see [below for nested schema](#nestedatt--layouts--sharded--environment--options))
 - `pass` (String, Sensitive)
 - `resource_limits` (Attributes) (see [below for nested schema](#nestedatt--layouts--sharded--environment--resource_limits))
 - `sni_proxy_for_ch` (Boolean)
 - `ssl_certificate_arn` (String)
-- `status` (String) ; Example: "online"
-- `type` (String) ; Example: "kubernetes"
-- `user` (String) ; Example: "clickhouse_operator"
+- `status` (String)
+- `type` (String)
+- `user` (String)
 - `vpc_endpoints` (Boolean)
 
 <a id="nestedatt--layouts--sharded--environment--backup_options"></a>
@@ -1182,17 +1182,17 @@ Read-Only:
 
 Read-Only:
 
-- `bucket` (String) ; Example: "altinity-cloud-prod-000p23wu50-clickhouse-backup"
-- `compression_format` (String) ; Example: "tar"
+- `bucket` (String)
+- `compression_format` (String)
 - `day` (Number)
-- `enable` (Boolean) ; Example: "true"
-- `keep` (String) ; Example: "7"
+- `enable` (Boolean)
+- `keep` (String)
 - `path` (String)
-- `provider` (String) ; Example: "gcp"
+- `provider` (String)
 - `region` (String)
-- `schedule` (String) ; Example: "daily"
+- `schedule` (String)
 - `secret_key` (String, Sensitive)
-- `time` (String) ; Example: "05:00"
+- `time` (String)
 
 
 <a id="nestedatt--layouts--sharded--environment--datadog_settings"></a>
@@ -1213,7 +1213,7 @@ Read-Only:
 - `ca_cert` (String)
 - `client_cert` (String)
 - `client_key` (String)
-- `type` (String) ; Example: "token"
+- `type` (String)
 
 
 <a id="nestedatt--layouts--sharded--environment--logs_storage"></a>
@@ -1241,8 +1241,8 @@ Read-Only:
 
 Read-Only:
 
-- `uid` (String) ; Example: "clickhouse-operator"
-- `url` (String) ; Example: "/monitoring/675/d/clickhouse-operator/altinity-clickhouse-operator-dashboard"
+- `uid` (String)
+- `url` (String)
 
 
 <a id="nestedatt--layouts--sharded--environment--vpc_endpoints--db_clickhouse_in_kubernetes_queries"></a>
@@ -1250,8 +1250,8 @@ Read-Only:
 
 Read-Only:
 
-- `uid` (String) ; Example: "clickhouse-queries"
-- `url` (String) ; Example: "/monitoring/675/d/clickhouse-queries/clickhouse-in-kubernetes-queries"
+- `uid` (String)
+- `url` (String)
 
 
 <a id="nestedatt--layouts--sharded--environment--vpc_endpoints--db_logs_dashboard"></a>
@@ -1259,8 +1259,8 @@ Read-Only:
 
 Read-Only:
 
-- `uid` (String) ; Example: "logs-dashboard"
-- `url` (String) ; Example: "/monitoring/675/d/logs-dashboard/logs-dashboard"
+- `uid` (String)
+- `url` (String)
 
 
 <a id="nestedatt--layouts--sharded--environment--vpc_endpoints--db_system_load"></a>
@@ -1268,8 +1268,8 @@ Read-Only:
 
 Read-Only:
 
-- `uid` (String) ; Example: "kQsMXaG4z"
-- `url` (String) ; Example: "/monitoring/675/d/kQsMXaG4z/system-load"
+- `uid` (String)
+- `url` (String)
 
 
 <a id="nestedatt--layouts--sharded--environment--vpc_endpoints--db_zookeeper_dashboard"></a>
@@ -1277,8 +1277,8 @@ Read-Only:
 
 Read-Only:
 
-- `uid` (String) ; Example: "zookeeper"
-- `url` (String) ; Example: "/monitoring/675/d/zookeeper/zookeeper-dashboard"
+- `uid` (String)
+- `url` (String)
 
 
 
@@ -1288,8 +1288,8 @@ Read-Only:
 Read-Only:
 
 - `azlist` (List of String)
-- `network` (String) ; Example: "0.0.0.0/0"
-- `size_multiplier` (String) ; Example: "10"
+- `network` (String)
+- `size_multiplier` (String)
 
 
 <a id="nestedatt--layouts--sharded--environment--resource_limits"></a>
@@ -1297,13 +1297,13 @@ Read-Only:
 
 Read-Only:
 
-- `cpu` (String) ; Example: "16"
-- `memory` (String) ; Example: "0"
+- `cpu` (String)
+- `memory` (String)
 - `nodes` (Number)
-- `replicas` (Number) ; Example: "3"
-- `shards` (Number) ; Example: "20"
-- `storage` (String) ; Example: "500"
-- `volume_rescale` (Number) ; Example: "10"
+- `replicas` (Number)
+- `shards` (Number)
+- `storage` (String)
+- `volume_rescale` (Number)
 
 
 
@@ -1312,8 +1312,8 @@ Read-Only:
 
 Read-Only:
 
-- `user` (String) ; Example: "system"
-- `user_email` (String) ; Example: "system"
+- `user` (String)
+- `user_email` (String)
 - `user_id` (Number)
 
 
@@ -1322,14 +1322,14 @@ Read-Only:
 
 Read-Only:
 
-- `backup_tool` (String) ; Example: "altinity/clickhouse-backup:2.1.3"
+- `backup_tool` (String)
 - `blocked` (Boolean)
 - `dark_theme` (Boolean)
-- `email` (String) ; Example: "thomas@speakeasyapi.dev"
-- `id` (String) ; Example: "1597"
-- `id_organization` (String) ; Example: "508"
-- `id_role` (String) ; Example: "3"
-- `name` (String) ; Example: "Thomas Rooney"
+- `email` (String)
+- `id` (String)
+- `id_organization` (String)
+- `id_role` (String)
+- `name` (String)
 - `organization` (Attributes) (see [below for nested schema](#nestedatt--layouts--sharded--owner--organization))
 - `origins` (String)
 - `password` (String, Sensitive)
@@ -1344,16 +1344,16 @@ Read-Only:
 - `blocked` (Boolean)
 - `blocked_api` (Boolean)
 - `blocked_password` (Boolean)
-- `company_name` (String) ; Example: "Speakeasy API"
-- `email_domain` (String) ; Example: "speakeasyapi.dev"
+- `company_name` (String)
+- `email_domain` (String)
 - `expired` (Boolean)
-- `id` (String) ; Example: "508"
-- `id_default_user_role` (String) ; Example: "6"
-- `id_owner` (String) ; Example: "104"
-- `name` (String) ; Example: "Speakeasy API"
+- `id` (String)
+- `id_default_user_role` (String)
+- `id_owner` (String)
+- `name` (String)
 - `opened` (Boolean)
-- `trial` (Boolean) ; Example: "true"
-- `trial_expiry` (String) ; Example: "2023-07-13 00:00:00"
+- `trial` (Boolean)
+- `trial_expiry` (String)
 
 
 <a id="nestedatt--layouts--sharded--owner--role"></a>
@@ -1361,19 +1361,19 @@ Read-Only:
 
 Read-Only:
 
-- `id` (String) ; Example: "3"
-- `name` (String) ; Example: "orgadmin"
+- `id` (String)
+- `name` (String)
 - `rights` (Attributes List) (see [below for nested schema](#nestedatt--layouts--sharded--owner--role--rights))
-- `system` (Boolean) ; Example: "true"
+- `system` (Boolean)
 
 <a id="nestedatt--layouts--sharded--owner--role--rights"></a>
 ### Nested Schema for `layouts.sharded.owner.role.rights`
 
 Read-Only:
 
-- `access` (String) ; Example: "deny"
-- `action` (String) ; Example: "actionEditRole"
-- `class` (String) ; Example: "Accounts"
+- `access` (String)
+- `action` (String)
+- `class` (String)
 
 
 
@@ -1385,20 +1385,20 @@ Read-Only:
 
 Read-Only:
 
-- `acm_host` (String) ; Example: "https://acm.altinity.cloud"
+- `acm_host` (String)
 - `azlist` (List of String)
-- `cpu` (String) ; Example: "2"
-- `disks` (Number) ; Example: "1"
-- `ip_whitelist` (String) ; Example: "31.94.0.155"
-- `lb_type` (String) ; Example: "ingress"
-- `managed_p_vs` (Boolean) ; Example: "true"
-- `memory` (String) ; Example: "6144"
+- `cpu` (String)
+- `disks` (Number)
+- `ip_whitelist` (String)
+- `lb_type` (String)
+- `managed_p_vs` (Boolean)
+- `memory` (String)
 - `region` (String)
-- `size` (Number) ; Example: "100"
-- `static` (Boolean) ; Example: "true"
-- `storage_class` (String) ; Example: "pd-balanced"
-- `type` (String) ; Example: "n2d-standard-2"
-- `version` (String) ; Example: "22.8.15.25.altinitystable"
+- `size` (Number)
+- `static` (Boolean)
+- `storage_class` (String)
+- `type` (String)
+- `version` (String)
 - `zk_root` (Boolean)
 
 
@@ -1407,14 +1407,14 @@ Read-Only:
 
 Read-Only:
 
-- `backup_tool` (String) ; Example: "altinity/clickhouse-backup:2.1.3"
+- `backup_tool` (String)
 - `blocked` (Boolean)
 - `dark_theme` (Boolean)
-- `email` (String) ; Example: "thomas@speakeasyapi.dev"
-- `id` (String) ; Example: "1597"
-- `id_organization` (String) ; Example: "508"
-- `id_role` (String) ; Example: "3"
-- `name` (String) ; Example: "Thomas Rooney"
+- `email` (String)
+- `id` (String)
+- `id_organization` (String)
+- `id_role` (String)
+- `name` (String)
 - `organization` (Attributes) (see [below for nested schema](#nestedatt--owner--organization))
 - `origins` (String)
 - `password` (String, Sensitive)
@@ -1429,16 +1429,16 @@ Read-Only:
 - `blocked` (Boolean)
 - `blocked_api` (Boolean)
 - `blocked_password` (Boolean)
-- `company_name` (String) ; Example: "Speakeasy API"
-- `email_domain` (String) ; Example: "speakeasyapi.dev"
+- `company_name` (String)
+- `email_domain` (String)
 - `expired` (Boolean)
-- `id` (String) ; Example: "508"
-- `id_default_user_role` (String) ; Example: "6"
-- `id_owner` (String) ; Example: "104"
-- `name` (String) ; Example: "Speakeasy API"
+- `id` (String)
+- `id_default_user_role` (String)
+- `id_owner` (String)
+- `name` (String)
 - `opened` (Boolean)
-- `trial` (Boolean) ; Example: "true"
-- `trial_expiry` (String) ; Example: "2023-07-13 00:00:00"
+- `trial` (Boolean)
+- `trial_expiry` (String)
 
 
 <a id="nestedatt--owner--role"></a>
@@ -1446,18 +1446,18 @@ Read-Only:
 
 Read-Only:
 
-- `id` (String) ; Example: "3"
-- `name` (String) ; Example: "orgadmin"
+- `id` (String)
+- `name` (String)
 - `rights` (Attributes List) (see [below for nested schema](#nestedatt--owner--role--rights))
-- `system` (Boolean) ; Example: "true"
+- `system` (Boolean)
 
 <a id="nestedatt--owner--role--rights"></a>
 ### Nested Schema for `owner.role.rights`
 
 Read-Only:
 
-- `access` (String) ; Example: "deny"
-- `action` (String) ; Example: "actionEditRole"
-- `class` (String) ; Example: "Accounts"
+- `access` (String)
+- `action` (String)
+- `class` (String)
 
 
