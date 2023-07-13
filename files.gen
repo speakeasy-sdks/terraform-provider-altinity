@@ -79,6 +79,7 @@ internal/sdk/pkg/models/operations/deleteapiclusterid1.go
 internal/sdk/pkg/models/operations/postapiidenvironmentclusterlaunch.go
 internal/sdk/pkg/models/shared/clickhouseclusterresponse.go
 internal/sdk/pkg/models/shared/clickhouseclusterrequestinput.go
+internal/sdk/pkg/models/shared/security.go
 USAGE.md
 internal/provider/provider.go
 examples/provider/provider.tf

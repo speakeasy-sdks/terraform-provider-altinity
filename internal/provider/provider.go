@@ -4,6 +4,7 @@ package provider
 
 import (
 	"altinity/internal/sdk"
+	"altinity/internal/sdk/pkg/models/shared"
 	"context"
 
 	"github.com/hashicorp/terraform-plugin-framework/datasource"
@@ -25,6 +26,7 @@ type AltinityProvider struct {
 // AltinityProviderModel describes the provider data model.
 type AltinityProviderModel struct {
 	ServerURL types.String `tfsdk:"server_url"`
+	APIKey    types.String `tfsdk:"api_key"`
 }
 
 func (p *AltinityProvider) Metadata(ctx context.Context, req provider.MetadataRequest, resp *provider.MetadataResponse) {
@@ -39,6 +41,10 @@ func (p *AltinityProvider) Schema(ctx context.Context, req provider.SchemaReques
 				MarkdownDescription: "Server URL (defaults to https://acm.altinity.cloud)",
 				Optional:            true,
 				Required:            false,
+			},
+			"api_key": schema.StringAttribute{
+				Optional:  true,
+				Sensitive: true,
 			},
 		},
 	}
@@ -59,8 +65,14 @@ func (p *AltinityProvider) Configure(ctx context.Context, req provider.Configure
 		ServerURL = "https://acm.altinity.cloud"
 	}
 
+	apiKey := data.APIKey.ValueString()
+	security := shared.Security{
+		APIKey: apiKey,
+	}
+
 	opts := []sdk.SDKOption{
 		sdk.WithServerURL(ServerURL),
+		sdk.WithSecurity(security),
 	}
 	client := sdk.New(opts...)
 

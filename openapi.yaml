@@ -3183,5 +3183,12 @@ components:
         - clusterMonitoringUrl
         - replicas
         - altinitySupport
+  securitySchemes:
+    apiKey:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+security:
+  - apiKey: []
 servers:
   - url: https://acm.altinity.cloud

@@ -119,8 +119,7 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 				PlanModifiers: []planmodifier.String{
 					stringplanmodifier.RequiresReplace(),
 				},
-				Required:    true,
-				Description: `; Example: "admin"`,
+				Required: true,
 			},
 			"alerts_settings": schema.SingleNestedAttribute{
 				Computed: true,
@@ -182,8 +181,7 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 				},
 			},
 			"altinity_support": schema.StringAttribute{
-				Computed:    true,
-				Description: `; Example: "system"`,
+				Computed: true,
 			},
 			"azlist": schema.ListAttribute{
 				PlanModifiers: []planmodifier.List{
@@ -208,15 +206,13 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 						PlanModifiers: []planmodifier.String{
 							stringplanmodifier.RequiresReplace(),
 						},
-						Required:    true,
-						Description: `; Example: "altinity-cloud-prod-000p23wu50-clickhouse-backup"`,
+						Required: true,
 					},
 					"compression_format": schema.StringAttribute{
 						PlanModifiers: []planmodifier.String{
 							stringplanmodifier.RequiresReplace(),
 						},
-						Required:    true,
-						Description: `; Example: "tar"`,
+						Required: true,
 					},
 					"day": schema.Int64Attribute{
 						PlanModifiers: []planmodifier.Int64{
@@ -228,12 +224,10 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 						PlanModifiers: []planmodifier.Bool{
 							boolplanmodifier.RequiresReplace(),
 						},
-						Required:    true,
-						Description: `; Example: "true"`,
+						Required: true,
 					},
 					"keep": schema.StringAttribute{
-						Computed:    true,
-						Description: `; Example: "7"`,
+						Computed: true,
 					},
 					"path": schema.StringAttribute{
 						PlanModifiers: []planmodifier.String{
@@ -245,8 +239,7 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 						PlanModifiers: []planmodifier.String{
 							stringplanmodifier.RequiresReplace(),
 						},
-						Required:    true,
-						Description: `; Example: "gcp"`,
+						Required: true,
 					},
 					"region": schema.StringAttribute{
 						PlanModifiers: []planmodifier.String{
@@ -258,16 +251,14 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 						PlanModifiers: []planmodifier.String{
 							stringplanmodifier.RequiresReplace(),
 						},
-						Required:    true,
-						Description: `; Example: "daily"`,
+						Required: true,
 					},
 					"secret_key": schema.StringAttribute{
 						PlanModifiers: []planmodifier.String{
 							stringplanmodifier.RequiresReplace(),
 						},
-						Required:    true,
-						Sensitive:   true,
-						Description: `; Example: "*******"`,
+						Required:  true,
+						Sensitive: true,
 					},
 					"settings": schema.ListNestedAttribute{
 						PlanModifiers: []planmodifier.List{
@@ -286,22 +277,19 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 									PlanModifiers: []planmodifier.Int64{
 										int64planmodifier.RequiresReplace(),
 									},
-									Required:    true,
-									Description: `; Example: "1"`,
+									Required: true,
 								},
 								"period": schema.StringAttribute{
 									PlanModifiers: []planmodifier.String{
 										stringplanmodifier.RequiresReplace(),
 									},
-									Required:    true,
-									Description: `; Example: "daily"`,
+									Required: true,
 								},
 								"time": schema.StringAttribute{
 									PlanModifiers: []planmodifier.String{
 										stringplanmodifier.RequiresReplace(),
 									},
-									Required:    true,
-									Description: `; Example: "05:00"`,
+									Required: true,
 								},
 							},
 						},
@@ -310,26 +298,21 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 						PlanModifiers: []planmodifier.String{
 							stringplanmodifier.RequiresReplace(),
 						},
-						Required:    true,
-						Description: `; Example: "05:00"`,
+						Required: true,
 					},
 				},
 			},
 			"can_publish": schema.BoolAttribute{
-				Computed:    true,
-				Description: `; Example: "true"`,
+				Computed: true,
 			},
 			"can_rescale": schema.BoolAttribute{
-				Computed:    true,
-				Description: `; Example: "true"`,
+				Computed: true,
 			},
 			"changed": schema.BoolAttribute{
-				Computed:    true,
-				Description: `; Example: "true"`,
+				Computed: true,
 			},
 			"cluster_monitoring_url": schema.StringAttribute{
-				Computed:    true,
-				Description: `; Example: "/monitoring/675/d/clickhouse-operator/altinity-clickhouse-operator-dashboard?var-exported_namespace=altinity-cloud-managed-clickhouse&var-chi=dev&var-hostname=All"`,
+				Computed: true,
 			},
 			"datadog_settings": schema.SingleNestedAttribute{
 				PlanModifiers: []planmodifier.Object{
@@ -355,26 +338,22 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 				PlanModifiers: []planmodifier.Int64{
 					int64planmodifier.RequiresReplace(),
 				},
-				Required:    true,
-				Description: `; Example: "1"`,
+				Required: true,
 			},
 			"domain_name": schema.StringAttribute{
 				PlanModifiers: []planmodifier.String{
 					stringplanmodifier.RequiresReplace(),
 				},
-				Required:    true,
-				Description: `; Example: "dev.speakeasyapi.altinity.cloud"`,
+				Required: true,
 			},
 			"environment": schema.SingleNestedAttribute{
 				Computed: true,
 				Attributes: map[string]schema.Attribute{
 					"auto_push": schema.BoolAttribute{
-						Computed:    true,
-						Description: `; Example: "true"`,
+						Computed: true,
 					},
 					"auto_zk_push": schema.StringAttribute{
-						Computed:    true,
-						Description: `; Example: "1"`,
+						Computed: true,
 					},
 					"aws_settings_auto": schema.BoolAttribute{
 						Computed: true,
@@ -383,55 +362,46 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 						Computed: true,
 						Attributes: map[string]schema.Attribute{
 							"bucket": schema.StringAttribute{
-								Computed:    true,
-								Description: `; Example: "altinity-cloud-prod-000p23wu50-clickhouse-backup"`,
+								Computed: true,
 							},
 							"compression_format": schema.StringAttribute{
-								Computed:    true,
-								Description: `; Example: "tar"`,
+								Computed: true,
 							},
 							"day": schema.Int64Attribute{
 								Computed: true,
 							},
 							"enable": schema.BoolAttribute{
-								Computed:    true,
-								Description: `; Example: "true"`,
+								Computed: true,
 							},
 							"keep": schema.StringAttribute{
-								Computed:    true,
-								Description: `; Example: "7"`,
+								Computed: true,
 							},
 							"path": schema.StringAttribute{
 								Computed: true,
 							},
 							"provider": schema.StringAttribute{
-								Computed:    true,
-								Description: `; Example: "gcp"`,
+								Computed: true,
 							},
 							"region": schema.StringAttribute{
 								Computed: true,
 							},
 							"schedule": schema.StringAttribute{
-								Computed:    true,
-								Description: `; Example: "daily"`,
+								Computed: true,
 							},
 							"secret_key": schema.StringAttribute{
 								Computed:  true,
 								Sensitive: true,
 							},
 							"time": schema.StringAttribute{
-								Computed:    true,
-								Description: `; Example: "05:00"`,
+								Computed: true,
 							},
 						},
 					},
 					"core_cidr": schema.StringAttribute{
-						Computed:    true,
-						Description: `; Example: "34.238.65.247,44.195.72.25,100.24.75.12,10.0.0.0/8,172.16.0.0/12,192.168.0.0/16,10.128.0.0/21"`,
+						Computed: true,
 					},
 					"created": schema.StringAttribute{
-						Computed:    true,
-						Description: `; Example: "2023-06-29 11:48:58"`,
+						Computed: true,
 					},
 					"dashboard_url": schema.StringAttribute{
 						Computed: true,
@@ -451,27 +421,22 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 						},
 					},
 					"domain": schema.StringAttribute{
-						Computed:    true,
-						Description: `; Example: "speakeasyapi.altinity.cloud"`,
+						Computed: true,
 					},
 					"external_dns": schema.StringAttribute{
-						Computed:    true,
-						Description: `; Example: "1"`,
+						Computed: true,
 					},
 					"id": schema.StringAttribute{
-						Computed:    true,
-						Description: `; Example: "675"`,
+						Computed: true,
 					},
 					"id_owner": schema.StringAttribute{
-						Computed:    true,
-						Description: `; Example: "104"`,
+						Computed: true,
 					},
 					"is_anywhere": schema.BoolAttribute{
 						Computed: true,
 					},
 					"kube_api_url": schema.StringAttribute{
-						Computed:    true,
-						Description: `; Example: "https://k8s.speakeasyapi.altinity.cloud"`,
+						Computed: true,
 					},
 					"kube_auth_options": schema.SingleNestedAttribute{
 						Computed: true,
@@ -486,49 +451,40 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 								Computed: true,
 							},
 							"type": schema.StringAttribute{
-								Computed:    true,
-								Description: `; Example: "token"`,
+								Computed: true,
 							},
 						},
 					},
 					"kube_check": schema.StringAttribute{
-						Computed:    true,
-						Description: `; Example: "2023-07-04 13:58:01.112731"`,
+						Computed: true,
 					},
 					"kube_cho_version": schema.StringAttribute{
-						Computed:    true,
-						Description: `; Example: "0.21.1"`,
+						Computed: true,
 					},
 					"kube_lb_type": schema.StringAttribute{
-						Computed:    true,
-						Description: `; Example: "ingress"`,
+						Computed: true,
 					},
 					"kube_managed_p_vs": schema.BoolAttribute{
-						Computed:    true,
-						Description: `; Example: "true"`,
+						Computed: true,
 					},
 					"kube_namespace": schema.StringAttribute{
-						Computed:    true,
-						Description: `; Example: "altinity-cloud-managed-clickhouse"`,
+						Computed: true,
 					},
 					"kube_namespace_manage": schema.BoolAttribute{
 						Computed: true,
 					},
 					"kube_provider": schema.StringAttribute{
-						Computed:    true,
-						Description: `; Example: "gcp"`,
+						Computed: true,
 					},
 					"kube_startup_mode": schema.StringAttribute{
-						Computed:    true,
-						Description: `; Example: "direct"`,
+						Computed: true,
 					},
 					"kube_token": schema.StringAttribute{
 						Computed:  true,
 						Sensitive: true,
 					},
 					"listen_check": schema.StringAttribute{
-						Computed:    true,
-						Description: `; Example: "2023-07-04 11:42:01"`,
+						Computed: true,
 					},
 					"logs_storage": schema.SingleNestedAttribute{
 						Computed: true,
@@ -542,8 +498,7 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 						},
 					},
 					"monitoring": schema.BoolAttribute{
-						Computed:    true,
-						Description: `; Example: "true"`,
+						Computed: true,
 					},
 					"monitoring_info": schema.SingleNestedAttribute{
 						Computed: true,
@@ -552,12 +507,10 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 								Computed: true,
 								Attributes: map[string]schema.Attribute{
 									"uid": schema.StringAttribute{
-										Computed:    true,
-										Description: `; Example: "clickhouse-operator"`,
+										Computed: true,
 									},
 									"url": schema.StringAttribute{
-										Computed:    true,
-										Description: `; Example: "/monitoring/675/d/clickhouse-operator/altinity-clickhouse-operator-dashboard"`,
+										Computed: true,
 									},
 								},
 							},
@@ -565,12 +518,10 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 								Computed: true,
 								Attributes: map[string]schema.Attribute{
 									"uid": schema.StringAttribute{
-										Computed:    true,
-										Description: `; Example: "clickhouse-queries"`,
+										Computed: true,
 									},
 									"url": schema.StringAttribute{
-										Computed:    true,
-										Description: `; Example: "/monitoring/675/d/clickhouse-queries/clickhouse-in-kubernetes-queries"`,
+										Computed: true,
 									},
 								},
 							},
@@ -578,12 +529,10 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 								Computed: true,
 								Attributes: map[string]schema.Attribute{
 									"uid": schema.StringAttribute{
-										Computed:    true,
-										Description: `; Example: "logs-dashboard"`,
+										Computed: true,
 									},
 									"url": schema.StringAttribute{
-										Computed:    true,
-										Description: `; Example: "/monitoring/675/d/logs-dashboard/logs-dashboard"`,
+										Computed: true,
 									},
 								},
 							},
@@ -591,12 +540,10 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 								Computed: true,
 								Attributes: map[string]schema.Attribute{
 									"uid": schema.StringAttribute{
-										Computed:    true,
-										Description: `; Example: "kQsMXaG4z"`,
+										Computed: true,
 									},
 									"url": schema.StringAttribute{
-										Computed:    true,
-										Description: `; Example: "/monitoring/675/d/kQsMXaG4z/system-load"`,
+										Computed: true,
 									},
 								},
 							},
@@ -604,24 +551,20 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 								Computed: true,
 								Attributes: map[string]schema.Attribute{
 									"uid": schema.StringAttribute{
-										Computed:    true,
-										Description: `; Example: "zookeeper"`,
+										Computed: true,
 									},
 									"url": schema.StringAttribute{
-										Computed:    true,
-										Description: `; Example: "/monitoring/675/d/zookeeper/zookeeper-dashboard"`,
+										Computed: true,
 									},
 								},
 							},
 						},
 					},
 					"monitoring_url": schema.StringAttribute{
-						Computed:    true,
-						Description: `; Example: "https://b3teh6ah22y6rjpb6y4d.speakeasyapi.altinity.cloud"`,
+						Computed: true,
 					},
 					"name": schema.StringAttribute{
-						Computed:    true,
-						Description: `; Example: "speakeasyapi"`,
+						Computed: true,
 					},
 					"options": schema.SingleNestedAttribute{
 						Computed: true,
@@ -631,12 +574,10 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 								ElementType: types.StringType,
 							},
 							"network": schema.StringAttribute{
-								Computed:    true,
-								Description: `; Example: "0.0.0.0/0"`,
+								Computed: true,
 							},
 							"size_multiplier": schema.StringAttribute{
-								Computed:    true,
-								Description: `; Example: "10"`,
+								Computed: true,
 							},
 						},
 					},
@@ -648,31 +589,25 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 						Computed: true,
 						Attributes: map[string]schema.Attribute{
 							"cpu": schema.StringAttribute{
-								Computed:    true,
-								Description: `; Example: "16"`,
+								Computed: true,
 							},
 							"memory": schema.StringAttribute{
-								Computed:    true,
-								Description: `; Example: "0"`,
+								Computed: true,
 							},
 							"nodes": schema.Int64Attribute{
 								Computed: true,
 							},
 							"replicas": schema.Int64Attribute{
-								Computed:    true,
-								Description: `; Example: "3"`,
+								Computed: true,
 							},
 							"shards": schema.Int64Attribute{
-								Computed:    true,
-								Description: `; Example: "20"`,
+								Computed: true,
 							},
 							"storage": schema.StringAttribute{
-								Computed:    true,
-								Description: `; Example: "500"`,
+								Computed: true,
 							},
 							"volume_rescale": schema.Int64Attribute{
-								Computed:    true,
-								Description: `; Example: "10"`,
+								Computed: true,
 							},
 						},
 					},
@@ -683,16 +618,13 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 						Computed: true,
 					},
 					"status": schema.StringAttribute{
-						Computed:    true,
-						Description: `; Example: "online"`,
+						Computed: true,
 					},
 					"type": schema.StringAttribute{
-						Computed:    true,
-						Description: `; Example: "kubernetes"`,
+						Computed: true,
 					},
 					"user": schema.StringAttribute{
-						Computed:    true,
-						Description: `; Example: "clickhouse_operator"`,
+						Computed: true,
 					},
 					"vpc_endpoints": schema.BoolAttribute{
 						Computed: true,
@@ -709,41 +641,34 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 				PlanModifiers: []planmodifier.String{
 					stringplanmodifier.RequiresReplace(),
 				},
-				Required:    true,
-				Description: `; Example: "localhost"`,
+				Required: true,
 			},
 			"http_port": schema.Int64Attribute{
 				PlanModifiers: []planmodifier.Int64{
 					int64planmodifier.RequiresReplace(),
 				},
-				Required:    true,
-				Description: `; Example: "5123"`,
+				Required: true,
 			},
 			"id": schema.StringAttribute{
-				Computed:    true,
-				Description: `; Example: "3958"`,
+				Computed: true,
 			},
 			"id_environment": schema.StringAttribute{
 				PlanModifiers: []planmodifier.String{
 					stringplanmodifier.RequiresReplace(),
 				},
-				Required:    true,
-				Description: `; Example: "675"`,
+				Required: true,
 			},
 			"id_owner": schema.StringAttribute{
-				Computed:    true,
-				Description: `; Example: "1597"`,
+				Computed: true,
 			},
 			"initial_action": schema.SingleNestedAttribute{
 				Computed: true,
 				Attributes: map[string]schema.Attribute{
 					"user": schema.StringAttribute{
-						Computed:    true,
-						Description: `; Example: "system"`,
+						Computed: true,
 					},
 					"user_email": schema.StringAttribute{
-						Computed:    true,
-						Description: `; Example: "system"`,
+						Computed: true,
 					},
 					"user_id": schema.Int64Attribute{
 						Computed: true,
@@ -757,15 +682,13 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 				Required: true,
 			},
 			"internal_name": schema.StringAttribute{
-				Computed:    true,
-				Description: `; Example: "dev"`,
+				Computed: true,
 			},
 			"ip_whitelist": schema.StringAttribute{
 				PlanModifiers: []planmodifier.String{
 					stringplanmodifier.RequiresReplace(),
 				},
-				Required:    true,
-				Description: `; Example: "31.94.0.155"`,
+				Required: true,
 			},
 			"layouts": schema.SingleNestedAttribute{
 				Computed: true,
@@ -833,59 +756,49 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 								Computed: true,
 								Attributes: map[string]schema.Attribute{
 									"bucket": schema.StringAttribute{
-										Computed:    true,
-										Description: `; Example: "altinity-cloud-prod-000p23wu50-clickhouse-backup"`,
+										Computed: true,
 									},
 									"compression_format": schema.StringAttribute{
-										Computed:    true,
-										Description: `; Example: "tar"`,
+										Computed: true,
 									},
 									"day": schema.Int64Attribute{
 										Computed: true,
 									},
 									"enable": schema.BoolAttribute{
-										Computed:    true,
-										Description: `; Example: "true"`,
+										Computed: true,
 									},
 									"keep": schema.StringAttribute{
-										Computed:    true,
-										Description: `; Example: "7"`,
+										Computed: true,
 									},
 									"path": schema.StringAttribute{
 										Computed: true,
 									},
 									"provider": schema.StringAttribute{
-										Computed:    true,
-										Description: `; Example: "gcp"`,
+										Computed: true,
 									},
 									"region": schema.StringAttribute{
 										Computed: true,
 									},
 									"schedule": schema.StringAttribute{
-										Computed:    true,
-										Description: `; Example: "daily"`,
+										Computed: true,
 									},
 									"secret_key": schema.StringAttribute{
 										Computed:  true,
 										Sensitive: true,
 									},
 									"time": schema.StringAttribute{
-										Computed:    true,
-										Description: `; Example: "05:00"`,
+										Computed: true,
 									},
 								},
 							},
 							"can_publish": schema.BoolAttribute{
-								Computed:    true,
-								Description: `; Example: "true"`,
+								Computed: true,
 							},
 							"can_rescale": schema.BoolAttribute{
-								Computed:    true,
-								Description: `; Example: "true"`,
+								Computed: true,
 							},
 							"cluster_monitoring_url": schema.StringAttribute{
-								Computed:    true,
-								Description: `; Example: "/monitoring/675/d/clickhouse-operator/altinity-clickhouse-operator-dashboard?var-exported_namespace=altinity-cloud-managed-clickhouse&var-chi=all-replicated&var-hostname=All"`,
+								Computed: true,
 							},
 							"datadog_settings": schema.SingleNestedAttribute{
 								Computed: true,
@@ -902,12 +815,10 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 								Computed: true,
 								Attributes: map[string]schema.Attribute{
 									"auto_push": schema.BoolAttribute{
-										Computed:    true,
-										Description: `; Example: "true"`,
+										Computed: true,
 									},
 									"auto_zk_push": schema.StringAttribute{
-										Computed:    true,
-										Description: `; Example: "1"`,
+										Computed: true,
 									},
 									"aws_settings_auto": schema.BoolAttribute{
 										Computed: true,
@@ -916,55 +827,46 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 										Computed: true,
 										Attributes: map[string]schema.Attribute{
 											"bucket": schema.StringAttribute{
-												Computed:    true,
-												Description: `; Example: "altinity-cloud-prod-000p23wu50-clickhouse-backup"`,
+												Computed: true,
 											},
 											"compression_format": schema.StringAttribute{
-												Computed:    true,
-												Description: `; Example: "tar"`,
+												Computed: true,
 											},
 											"day": schema.Int64Attribute{
 												Computed: true,
 											},
 											"enable": schema.BoolAttribute{
-												Computed:    true,
-												Description: `; Example: "true"`,
+												Computed: true,
 											},
 											"keep": schema.StringAttribute{
-												Computed:    true,
-												Description: `; Example: "7"`,
+												Computed: true,
 											},
 											"path": schema.StringAttribute{
 												Computed: true,
 											},
 											"provider": schema.StringAttribute{
-												Computed:    true,
-												Description: `; Example: "gcp"`,
+												Computed: true,
 											},
 											"region": schema.StringAttribute{
 												Computed: true,
 											},
 											"schedule": schema.StringAttribute{
-												Computed:    true,
-												Description: `; Example: "daily"`,
+												Computed: true,
 											},
 											"secret_key": schema.StringAttribute{
 												Computed:  true,
 												Sensitive: true,
 											},
 											"time": schema.StringAttribute{
-												Computed:    true,
-												Description: `; Example: "05:00"`,
+												Computed: true,
 											},
 										},
 									},
 									"core_cidr": schema.StringAttribute{
-										Computed:    true,
-										Description: `; Example: "34.238.65.247,44.195.72.25,100.24.75.12,10.0.0.0/8,172.16.0.0/12,192.168.0.0/16,10.128.0.0/21"`,
+										Computed: true,
 									},
 									"created": schema.StringAttribute{
-										Computed:    true,
-										Description: `; Example: "2023-06-29 11:48:58"`,
+										Computed: true,
 									},
 									"dashboard_url": schema.StringAttribute{
 										Computed: true,
@@ -984,27 +886,22 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 										},
 									},
 									"domain": schema.StringAttribute{
-										Computed:    true,
-										Description: `; Example: "speakeasyapi.altinity.cloud"`,
+										Computed: true,
 									},
 									"external_dns": schema.StringAttribute{
-										Computed:    true,
-										Description: `; Example: "1"`,
+										Computed: true,
 									},
 									"id": schema.StringAttribute{
-										Computed:    true,
-										Description: `; Example: "675"`,
+										Computed: true,
 									},
 									"id_owner": schema.StringAttribute{
-										Computed:    true,
-										Description: `; Example: "104"`,
+										Computed: true,
 									},
 									"is_anywhere": schema.BoolAttribute{
 										Computed: true,
 									},
 									"kube_api_url": schema.StringAttribute{
-										Computed:    true,
-										Description: `; Example: "https://k8s.speakeasyapi.altinity.cloud"`,
+										Computed: true,
 									},
 									"kube_auth_options": schema.SingleNestedAttribute{
 										Computed: true,
@@ -1019,49 +916,40 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 												Computed: true,
 											},
 											"type": schema.StringAttribute{
-												Computed:    true,
-												Description: `; Example: "token"`,
+												Computed: true,
 											},
 										},
 									},
 									"kube_check": schema.StringAttribute{
-										Computed:    true,
-										Description: `; Example: "2023-07-04 13:58:01.112731"`,
+										Computed: true,
 									},
 									"kube_cho_version": schema.StringAttribute{
-										Computed:    true,
-										Description: `; Example: "0.21.1"`,
+										Computed: true,
 									},
 									"kube_lb_type": schema.StringAttribute{
-										Computed:    true,
-										Description: `; Example: "ingress"`,
+										Computed: true,
 									},
 									"kube_managed_p_vs": schema.BoolAttribute{
-										Computed:    true,
-										Description: `; Example: "true"`,
+										Computed: true,
 									},
 									"kube_namespace": schema.StringAttribute{
-										Computed:    true,
-										Description: `; Example: "altinity-cloud-managed-clickhouse"`,
+										Computed: true,
 									},
 									"kube_namespace_manage": schema.BoolAttribute{
 										Computed: true,
 									},
 									"kube_provider": schema.StringAttribute{
-										Computed:    true,
-										Description: `; Example: "gcp"`,
+										Computed: true,
 									},
 									"kube_startup_mode": schema.StringAttribute{
-										Computed:    true,
-										Description: `; Example: "direct"`,
+										Computed: true,
 									},
 									"kube_token": schema.StringAttribute{
 										Computed:  true,
 										Sensitive: true,
 									},
 									"listen_check": schema.StringAttribute{
-										Computed:    true,
-										Description: `; Example: "2023-07-04 11:42:01"`,
+										Computed: true,
 									},
 									"logs_storage": schema.SingleNestedAttribute{
 										Computed: true,
@@ -1075,8 +963,7 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 										},
 									},
 									"monitoring": schema.BoolAttribute{
-										Computed:    true,
-										Description: `; Example: "true"`,
+										Computed: true,
 									},
 									"monitoring_info": schema.SingleNestedAttribute{
 										Computed: true,
@@ -1085,12 +972,10 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 												Computed: true,
 												Attributes: map[string]schema.Attribute{
 													"uid": schema.StringAttribute{
-														Computed:    true,
-														Description: `; Example: "clickhouse-operator"`,
+														Computed: true,
 													},
 													"url": schema.StringAttribute{
-														Computed:    true,
-														Description: `; Example: "/monitoring/675/d/clickhouse-operator/altinity-clickhouse-operator-dashboard"`,
+														Computed: true,
 													},
 												},
 											},
@@ -1098,12 +983,10 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 												Computed: true,
 												Attributes: map[string]schema.Attribute{
 													"uid": schema.StringAttribute{
-														Computed:    true,
-														Description: `; Example: "clickhouse-queries"`,
+														Computed: true,
 													},
 													"url": schema.StringAttribute{
-														Computed:    true,
-														Description: `; Example: "/monitoring/675/d/clickhouse-queries/clickhouse-in-kubernetes-queries"`,
+														Computed: true,
 													},
 												},
 											},
@@ -1111,12 +994,10 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 												Computed: true,
 												Attributes: map[string]schema.Attribute{
 													"uid": schema.StringAttribute{
-														Computed:    true,
-														Description: `; Example: "logs-dashboard"`,
+														Computed: true,
 													},
 													"url": schema.StringAttribute{
-														Computed:    true,
-														Description: `; Example: "/monitoring/675/d/logs-dashboard/logs-dashboard"`,
+														Computed: true,
 													},
 												},
 											},
@@ -1124,12 +1005,10 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 												Computed: true,
 												Attributes: map[string]schema.Attribute{
 													"uid": schema.StringAttribute{
-														Computed:    true,
-														Description: `; Example: "kQsMXaG4z"`,
+														Computed: true,
 													},
 													"url": schema.StringAttribute{
-														Computed:    true,
-														Description: `; Example: "/monitoring/675/d/kQsMXaG4z/system-load"`,
+														Computed: true,
 													},
 												},
 											},
@@ -1137,24 +1016,20 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 												Computed: true,
 												Attributes: map[string]schema.Attribute{
 													"uid": schema.StringAttribute{
-														Computed:    true,
-														Description: `; Example: "zookeeper"`,
+														Computed: true,
 													},
 													"url": schema.StringAttribute{
-														Computed:    true,
-														Description: `; Example: "/monitoring/675/d/zookeeper/zookeeper-dashboard"`,
+														Computed: true,
 													},
 												},
 											},
 										},
 									},
 									"monitoring_url": schema.StringAttribute{
-										Computed:    true,
-										Description: `; Example: "https://b3teh6ah22y6rjpb6y4d.speakeasyapi.altinity.cloud"`,
+										Computed: true,
 									},
 									"name": schema.StringAttribute{
-										Computed:    true,
-										Description: `; Example: "speakeasyapi"`,
+										Computed: true,
 									},
 									"options": schema.SingleNestedAttribute{
 										Computed: true,
@@ -1164,12 +1039,10 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 												ElementType: types.StringType,
 											},
 											"network": schema.StringAttribute{
-												Computed:    true,
-												Description: `; Example: "0.0.0.0/0"`,
+												Computed: true,
 											},
 											"size_multiplier": schema.StringAttribute{
-												Computed:    true,
-												Description: `; Example: "10"`,
+												Computed: true,
 											},
 										},
 									},
@@ -1181,31 +1054,25 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 										Computed: true,
 										Attributes: map[string]schema.Attribute{
 											"cpu": schema.StringAttribute{
-												Computed:    true,
-												Description: `; Example: "16"`,
+												Computed: true,
 											},
 											"memory": schema.StringAttribute{
-												Computed:    true,
-												Description: `; Example: "0"`,
+												Computed: true,
 											},
 											"nodes": schema.Int64Attribute{
 												Computed: true,
 											},
 											"replicas": schema.Int64Attribute{
-												Computed:    true,
-												Description: `; Example: "3"`,
+												Computed: true,
 											},
 											"shards": schema.Int64Attribute{
-												Computed:    true,
-												Description: `; Example: "20"`,
+												Computed: true,
 											},
 											"storage": schema.StringAttribute{
-												Computed:    true,
-												Description: `; Example: "500"`,
+												Computed: true,
 											},
 											"volume_rescale": schema.Int64Attribute{
-												Computed:    true,
-												Description: `; Example: "10"`,
+												Computed: true,
 											},
 										},
 									},
@@ -1216,16 +1083,13 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 										Computed: true,
 									},
 									"status": schema.StringAttribute{
-										Computed:    true,
-										Description: `; Example: "online"`,
+										Computed: true,
 									},
 									"type": schema.StringAttribute{
-										Computed:    true,
-										Description: `; Example: "kubernetes"`,
+										Computed: true,
 									},
 									"user": schema.StringAttribute{
-										Computed:    true,
-										Description: `; Example: "clickhouse_operator"`,
+										Computed: true,
 									},
 									"vpc_endpoints": schema.BoolAttribute{
 										Computed: true,
@@ -1239,31 +1103,25 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 								Computed: true,
 							},
 							"id": schema.StringAttribute{
-								Computed:    true,
-								Description: `; Example: "3960"`,
+								Computed: true,
 							},
 							"id_environment": schema.StringAttribute{
-								Computed:    true,
-								Description: `; Example: "675"`,
+								Computed: true,
 							},
 							"id_owner": schema.StringAttribute{
-								Computed:    true,
-								Description: `; Example: "1597"`,
+								Computed: true,
 							},
 							"id_parent": schema.StringAttribute{
-								Computed:    true,
-								Description: `; Example: "3958"`,
+								Computed: true,
 							},
 							"initial_action": schema.SingleNestedAttribute{
 								Computed: true,
 								Attributes: map[string]schema.Attribute{
 									"user": schema.StringAttribute{
-										Computed:    true,
-										Description: `; Example: "system"`,
+										Computed: true,
 									},
 									"user_email": schema.StringAttribute{
-										Computed:    true,
-										Description: `; Example: "system"`,
+										Computed: true,
 									},
 									"user_id": schema.Int64Attribute{
 										Computed: true,
@@ -1271,8 +1129,7 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 								},
 							},
 							"internal_name": schema.StringAttribute{
-								Computed:    true,
-								Description: `; Example: "all-replicated"`,
+								Computed: true,
 							},
 							"layouts": schema.ListAttribute{
 								Computed:    true,
@@ -1282,8 +1139,7 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 								},
 							},
 							"logs_monitoring_url": schema.StringAttribute{
-								Computed:    true,
-								Description: `; Example: "/monitoring/675/d/logs-dashboard/logs-dashboard?var-chi=all-replicated"`,
+								Computed: true,
 							},
 							"migration_progress": schema.Int64Attribute{
 								Computed: true,
@@ -1292,19 +1148,16 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 								Computed: true,
 							},
 							"name": schema.StringAttribute{
-								Computed:    true,
-								Description: `; Example: "all-replicated"`,
+								Computed: true,
 							},
 							"normalized_name": schema.StringAttribute{
-								Computed:    true,
-								Description: `; Example: "all-replicated"`,
+								Computed: true,
 							},
 							"owner": schema.SingleNestedAttribute{
 								Computed: true,
 								Attributes: map[string]schema.Attribute{
 									"backup_tool": schema.StringAttribute{
-										Computed:    true,
-										Description: `; Example: "altinity/clickhouse-backup:2.1.3"`,
+										Computed: true,
 									},
 									"blocked": schema.BoolAttribute{
 										Computed: true,
@@ -1313,24 +1166,19 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 										Computed: true,
 									},
 									"email": schema.StringAttribute{
-										Computed:    true,
-										Description: `; Example: "thomas@speakeasyapi.dev"`,
+										Computed: true,
 									},
 									"id": schema.StringAttribute{
-										Computed:    true,
-										Description: `; Example: "1597"`,
+										Computed: true,
 									},
 									"id_organization": schema.StringAttribute{
-										Computed:    true,
-										Description: `; Example: "508"`,
+										Computed: true,
 									},
 									"id_role": schema.StringAttribute{
-										Computed:    true,
-										Description: `; Example: "3"`,
+										Computed: true,
 									},
 									"name": schema.StringAttribute{
-										Computed:    true,
-										Description: `; Example: "Thomas Rooney"`,
+										Computed: true,
 									},
 									"organization": schema.SingleNestedAttribute{
 										Computed: true,
@@ -1348,42 +1196,34 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 												Computed: true,
 											},
 											"company_name": schema.StringAttribute{
-												Computed:    true,
-												Description: `; Example: "Speakeasy API"`,
+												Computed: true,
 											},
 											"email_domain": schema.StringAttribute{
-												Computed:    true,
-												Description: `; Example: "speakeasyapi.dev"`,
+												Computed: true,
 											},
 											"expired": schema.BoolAttribute{
 												Computed: true,
 											},
 											"id": schema.StringAttribute{
-												Computed:    true,
-												Description: `; Example: "508"`,
+												Computed: true,
 											},
 											"id_default_user_role": schema.StringAttribute{
-												Computed:    true,
-												Description: `; Example: "6"`,
+												Computed: true,
 											},
 											"id_owner": schema.StringAttribute{
-												Computed:    true,
-												Description: `; Example: "104"`,
+												Computed: true,
 											},
 											"name": schema.StringAttribute{
-												Computed:    true,
-												Description: `; Example: "Speakeasy API"`,
+												Computed: true,
 											},
 											"opened": schema.BoolAttribute{
 												Computed: true,
 											},
 											"trial": schema.BoolAttribute{
-												Computed:    true,
-												Description: `; Example: "true"`,
+												Computed: true,
 											},
 											"trial_expiry": schema.StringAttribute{
-												Computed:    true,
-												Description: `; Example: "2023-07-13 00:00:00"`,
+												Computed: true,
 											},
 										},
 									},
@@ -1398,43 +1238,36 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 										Computed: true,
 										Attributes: map[string]schema.Attribute{
 											"id": schema.StringAttribute{
-												Computed:    true,
-												Description: `; Example: "3"`,
+												Computed: true,
 											},
 											"name": schema.StringAttribute{
-												Computed:    true,
-												Description: `; Example: "orgadmin"`,
+												Computed: true,
 											},
 											"rights": schema.ListNestedAttribute{
 												Computed: true,
 												NestedObject: schema.NestedAttributeObject{
 													Attributes: map[string]schema.Attribute{
 														"access": schema.StringAttribute{
-															Computed:    true,
-															Description: `; Example: "deny"`,
+															Computed: true,
 														},
 														"action": schema.StringAttribute{
-															Computed:    true,
-															Description: `; Example: "actionEditRole"`,
+															Computed: true,
 														},
 														"class": schema.StringAttribute{
-															Computed:    true,
-															Description: `; Example: "Accounts"`,
+															Computed: true,
 														},
 													},
 												},
 											},
 											"system": schema.BoolAttribute{
-												Computed:    true,
-												Description: `; Example: "true"`,
+												Computed: true,
 											},
 										},
 									},
 								},
 							},
 							"query_monitoring_url": schema.StringAttribute{
-								Computed:    true,
-								Description: `; Example: "/monitoring/675/d/clickhouse-queries/clickhouse-in-kubernetes-queries?var-exported_namespace=altinity-cloud-managed-clickhouse&var-chi=all-replicated&var-hostname=All"`,
+								Computed: true,
 							},
 							"replicas": schema.Int64Attribute{
 								Computed: true,
@@ -1446,16 +1279,13 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 								Computed: true,
 							},
 							"system_monitoring_url": schema.StringAttribute{
-								Computed:    true,
-								Description: `; Example: "/monitoring/675/d/kQsMXaG4z/system-load?var-chi=all-replicated"`,
+								Computed: true,
 							},
 							"system_version": schema.StringAttribute{
-								Computed:    true,
-								Description: `; Example: "23.3.33"`,
+								Computed: true,
 							},
 							"uptime": schema.StringAttribute{
-								Computed:    true,
-								Description: `; Example: "always"`,
+								Computed: true,
 							},
 							"uptime_settings": schema.ListAttribute{
 								Computed:    true,
@@ -1532,59 +1362,49 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 								Computed: true,
 								Attributes: map[string]schema.Attribute{
 									"bucket": schema.StringAttribute{
-										Computed:    true,
-										Description: `; Example: "altinity-cloud-prod-000p23wu50-clickhouse-backup"`,
+										Computed: true,
 									},
 									"compression_format": schema.StringAttribute{
-										Computed:    true,
-										Description: `; Example: "tar"`,
+										Computed: true,
 									},
 									"day": schema.Int64Attribute{
 										Computed: true,
 									},
 									"enable": schema.BoolAttribute{
-										Computed:    true,
-										Description: `; Example: "true"`,
+										Computed: true,
 									},
 									"keep": schema.StringAttribute{
-										Computed:    true,
-										Description: `; Example: "7"`,
+										Computed: true,
 									},
 									"path": schema.StringAttribute{
 										Computed: true,
 									},
 									"provider": schema.StringAttribute{
-										Computed:    true,
-										Description: `; Example: "gcp"`,
+										Computed: true,
 									},
 									"region": schema.StringAttribute{
 										Computed: true,
 									},
 									"schedule": schema.StringAttribute{
-										Computed:    true,
-										Description: `; Example: "daily"`,
+										Computed: true,
 									},
 									"secret_key": schema.StringAttribute{
 										Computed:  true,
 										Sensitive: true,
 									},
 									"time": schema.StringAttribute{
-										Computed:    true,
-										Description: `; Example: "05:00"`,
+										Computed: true,
 									},
 								},
 							},
 							"can_publish": schema.BoolAttribute{
-								Computed:    true,
-								Description: `; Example: "true"`,
+								Computed: true,
 							},
 							"can_rescale": schema.BoolAttribute{
-								Computed:    true,
-								Description: `; Example: "true"`,
+								Computed: true,
 							},
 							"cluster_monitoring_url": schema.StringAttribute{
-								Computed:    true,
-								Description: `; Example: "/monitoring/675/d/clickhouse-operator/altinity-clickhouse-operator-dashboard?var-exported_namespace=altinity-cloud-managed-clickhouse&var-chi=all-sharded&var-hostname=All"`,
+								Computed: true,
 							},
 							"datadog_settings": schema.SingleNestedAttribute{
 								Computed: true,
@@ -1601,12 +1421,10 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 								Computed: true,
 								Attributes: map[string]schema.Attribute{
 									"auto_push": schema.BoolAttribute{
-										Computed:    true,
-										Description: `; Example: "true"`,
+										Computed: true,
 									},
 									"auto_zk_push": schema.StringAttribute{
-										Computed:    true,
-										Description: `; Example: "1"`,
+										Computed: true,
 									},
 									"aws_settings_auto": schema.BoolAttribute{
 										Computed: true,
@@ -1615,55 +1433,46 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 										Computed: true,
 										Attributes: map[string]schema.Attribute{
 											"bucket": schema.StringAttribute{
-												Computed:    true,
-												Description: `; Example: "altinity-cloud-prod-000p23wu50-clickhouse-backup"`,
+												Computed: true,
 											},
 											"compression_format": schema.StringAttribute{
-												Computed:    true,
-												Description: `; Example: "tar"`,
+												Computed: true,
 											},
 											"day": schema.Int64Attribute{
 												Computed: true,
 											},
 											"enable": schema.BoolAttribute{
-												Computed:    true,
-												Description: `; Example: "true"`,
+												Computed: true,
 											},
 											"keep": schema.StringAttribute{
-												Computed:    true,
-												Description: `; Example: "7"`,
+												Computed: true,
 											},
 											"path": schema.StringAttribute{
 												Computed: true,
 											},
 											"provider": schema.StringAttribute{
-												Computed:    true,
-												Description: `; Example: "gcp"`,
+												Computed: true,
 											},
 											"region": schema.StringAttribute{
 												Computed: true,
 											},
 											"schedule": schema.StringAttribute{
-												Computed:    true,
-												Description: `; Example: "daily"`,
+												Computed: true,
 											},
 											"secret_key": schema.StringAttribute{
 												Computed:  true,
 												Sensitive: true,
 											},
 											"time": schema.StringAttribute{
-												Computed:    true,
-												Description: `; Example: "05:00"`,
+												Computed: true,
 											},
 										},
 									},
 									"core_cidr": schema.StringAttribute{
-										Computed:    true,
-										Description: `; Example: "34.238.65.247,44.195.72.25,100.24.75.12,10.0.0.0/8,172.16.0.0/12,192.168.0.0/16,10.128.0.0/21"`,
+										Computed: true,
 									},
 									"created": schema.StringAttribute{
-										Computed:    true,
-										Description: `; Example: "2023-06-29 11:48:58"`,
+										Computed: true,
 									},
 									"dashboard_url": schema.StringAttribute{
 										Computed: true,
@@ -1683,27 +1492,22 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 										},
 									},
 									"domain": schema.StringAttribute{
-										Computed:    true,
-										Description: `; Example: "speakeasyapi.altinity.cloud"`,
+										Computed: true,
 									},
 									"external_dns": schema.StringAttribute{
-										Computed:    true,
-										Description: `; Example: "1"`,
+										Computed: true,
 									},
 									"id": schema.StringAttribute{
-										Computed:    true,
-										Description: `; Example: "675"`,
+										Computed: true,
 									},
 									"id_owner": schema.StringAttribute{
-										Computed:    true,
-										Description: `; Example: "104"`,
+										Computed: true,
 									},
 									"is_anywhere": schema.BoolAttribute{
 										Computed: true,
 									},
 									"kube_api_url": schema.StringAttribute{
-										Computed:    true,
-										Description: `; Example: "https://k8s.speakeasyapi.altinity.cloud"`,
+										Computed: true,
 									},
 									"kube_auth_options": schema.SingleNestedAttribute{
 										Computed: true,
@@ -1718,49 +1522,40 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 												Computed: true,
 											},
 											"type": schema.StringAttribute{
-												Computed:    true,
-												Description: `; Example: "token"`,
+												Computed: true,
 											},
 										},
 									},
 									"kube_check": schema.StringAttribute{
-										Computed:    true,
-										Description: `; Example: "2023-07-04 13:58:01.112731"`,
+										Computed: true,
 									},
 									"kube_cho_version": schema.StringAttribute{
-										Computed:    true,
-										Description: `; Example: "0.21.1"`,
+										Computed: true,
 									},
 									"kube_lb_type": schema.StringAttribute{
-										Computed:    true,
-										Description: `; Example: "ingress"`,
+										Computed: true,
 									},
 									"kube_managed_p_vs": schema.BoolAttribute{
-										Computed:    true,
-										Description: `; Example: "true"`,
+										Computed: true,
 									},
 									"kube_namespace": schema.StringAttribute{
-										Computed:    true,
-										Description: `; Example: "altinity-cloud-managed-clickhouse"`,
+										Computed: true,
 									},
 									"kube_namespace_manage": schema.BoolAttribute{
 										Computed: true,
 									},
 									"kube_provider": schema.StringAttribute{
-										Computed:    true,
-										Description: `; Example: "gcp"`,
+										Computed: true,
 									},
 									"kube_startup_mode": schema.StringAttribute{
-										Computed:    true,
-										Description: `; Example: "direct"`,
+										Computed: true,
 									},
 									"kube_token": schema.StringAttribute{
 										Computed:  true,
 										Sensitive: true,
 									},
 									"listen_check": schema.StringAttribute{
-										Computed:    true,
-										Description: `; Example: "2023-07-04 11:42:01"`,
+										Computed: true,
 									},
 									"logs_storage": schema.SingleNestedAttribute{
 										Computed: true,
@@ -1774,8 +1569,7 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 										},
 									},
 									"monitoring": schema.BoolAttribute{
-										Computed:    true,
-										Description: `; Example: "true"`,
+										Computed: true,
 									},
 									"monitoring_info": schema.SingleNestedAttribute{
 										Computed: true,
@@ -1784,12 +1578,10 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 												Computed: true,
 												Attributes: map[string]schema.Attribute{
 													"uid": schema.StringAttribute{
-														Computed:    true,
-														Description: `; Example: "clickhouse-operator"`,
+														Computed: true,
 													},
 													"url": schema.StringAttribute{
-														Computed:    true,
-														Description: `; Example: "/monitoring/675/d/clickhouse-operator/altinity-clickhouse-operator-dashboard"`,
+														Computed: true,
 													},
 												},
 											},
@@ -1797,12 +1589,10 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 												Computed: true,
 												Attributes: map[string]schema.Attribute{
 													"uid": schema.StringAttribute{
-														Computed:    true,
-														Description: `; Example: "clickhouse-queries"`,
+														Computed: true,
 													},
 													"url": schema.StringAttribute{
-														Computed:    true,
-														Description: `; Example: "/monitoring/675/d/clickhouse-queries/clickhouse-in-kubernetes-queries"`,
+														Computed: true,
 													},
 												},
 											},
@@ -1810,12 +1600,10 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 												Computed: true,
 												Attributes: map[string]schema.Attribute{
 													"uid": schema.StringAttribute{
-														Computed:    true,
-														Description: `; Example: "logs-dashboard"`,
+														Computed: true,
 													},
 													"url": schema.StringAttribute{
-														Computed:    true,
-														Description: `; Example: "/monitoring/675/d/logs-dashboard/logs-dashboard"`,
+														Computed: true,
 													},
 												},
 											},
@@ -1823,12 +1611,10 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 												Computed: true,
 												Attributes: map[string]schema.Attribute{
 													"uid": schema.StringAttribute{
-														Computed:    true,
-														Description: `; Example: "kQsMXaG4z"`,
+														Computed: true,
 													},
 													"url": schema.StringAttribute{
-														Computed:    true,
-														Description: `; Example: "/monitoring/675/d/kQsMXaG4z/system-load"`,
+														Computed: true,
 													},
 												},
 											},
@@ -1836,24 +1622,20 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 												Computed: true,
 												Attributes: map[string]schema.Attribute{
 													"uid": schema.StringAttribute{
-														Computed:    true,
-														Description: `; Example: "zookeeper"`,
+														Computed: true,
 													},
 													"url": schema.StringAttribute{
-														Computed:    true,
-														Description: `; Example: "/monitoring/675/d/zookeeper/zookeeper-dashboard"`,
+														Computed: true,
 													},
 												},
 											},
 										},
 									},
 									"monitoring_url": schema.StringAttribute{
-										Computed:    true,
-										Description: `; Example: "https://b3teh6ah22y6rjpb6y4d.speakeasyapi.altinity.cloud"`,
+										Computed: true,
 									},
 									"name": schema.StringAttribute{
-										Computed:    true,
-										Description: `; Example: "speakeasyapi"`,
+										Computed: true,
 									},
 									"options": schema.SingleNestedAttribute{
 										Computed: true,
@@ -1863,12 +1645,10 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 												ElementType: types.StringType,
 											},
 											"network": schema.StringAttribute{
-												Computed:    true,
-												Description: `; Example: "0.0.0.0/0"`,
+												Computed: true,
 											},
 											"size_multiplier": schema.StringAttribute{
-												Computed:    true,
-												Description: `; Example: "10"`,
+												Computed: true,
 											},
 										},
 									},
@@ -1880,31 +1660,25 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 										Computed: true,
 										Attributes: map[string]schema.Attribute{
 											"cpu": schema.StringAttribute{
-												Computed:    true,
-												Description: `; Example: "16"`,
+												Computed: true,
 											},
 											"memory": schema.StringAttribute{
-												Computed:    true,
-												Description: `; Example: "0"`,
+												Computed: true,
 											},
 											"nodes": schema.Int64Attribute{
 												Computed: true,
 											},
 											"replicas": schema.Int64Attribute{
-												Computed:    true,
-												Description: `; Example: "3"`,
+												Computed: true,
 											},
 											"shards": schema.Int64Attribute{
-												Computed:    true,
-												Description: `; Example: "20"`,
+												Computed: true,
 											},
 											"storage": schema.StringAttribute{
-												Computed:    true,
-												Description: `; Example: "500"`,
+												Computed: true,
 											},
 											"volume_rescale": schema.Int64Attribute{
-												Computed:    true,
-												Description: `; Example: "10"`,
+												Computed: true,
 											},
 										},
 									},
@@ -1915,16 +1689,13 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 										Computed: true,
 									},
 									"status": schema.StringAttribute{
-										Computed:    true,
-										Description: `; Example: "online"`,
+										Computed: true,
 									},
 									"type": schema.StringAttribute{
-										Computed:    true,
-										Description: `; Example: "kubernetes"`,
+										Computed: true,
 									},
 									"user": schema.StringAttribute{
-										Computed:    true,
-										Description: `; Example: "clickhouse_operator"`,
+										Computed: true,
 									},
 									"vpc_endpoints": schema.BoolAttribute{
 										Computed: true,
@@ -1938,31 +1709,25 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 								Computed: true,
 							},
 							"id": schema.StringAttribute{
-								Computed:    true,
-								Description: `; Example: "3959"`,
+								Computed: true,
 							},
 							"id_environment": schema.StringAttribute{
-								Computed:    true,
-								Description: `; Example: "675"`,
+								Computed: true,
 							},
 							"id_owner": schema.StringAttribute{
-								Computed:    true,
-								Description: `; Example: "1597"`,
+								Computed: true,
 							},
 							"id_parent": schema.StringAttribute{
-								Computed:    true,
-								Description: `; Example: "3958"`,
+								Computed: true,
 							},
 							"initial_action": schema.SingleNestedAttribute{
 								Computed: true,
 								Attributes: map[string]schema.Attribute{
 									"user": schema.StringAttribute{
-										Computed:    true,
-										Description: `; Example: "system"`,
+										Computed: true,
 									},
 									"user_email": schema.StringAttribute{
-										Computed:    true,
-										Description: `; Example: "system"`,
+										Computed: true,
 									},
 									"user_id": schema.Int64Attribute{
 										Computed: true,
@@ -1970,8 +1735,7 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 								},
 							},
 							"internal_name": schema.StringAttribute{
-								Computed:    true,
-								Description: `; Example: "all-sharded"`,
+								Computed: true,
 							},
 							"layouts": schema.ListAttribute{
 								Computed:    true,
@@ -1981,8 +1745,7 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 								},
 							},
 							"logs_monitoring_url": schema.StringAttribute{
-								Computed:    true,
-								Description: `; Example: "/monitoring/675/d/logs-dashboard/logs-dashboard?var-chi=all-sharded"`,
+								Computed: true,
 							},
 							"migration_progress": schema.Int64Attribute{
 								Computed: true,
@@ -1991,8 +1754,7 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 								Computed: true,
 							},
 							"name": schema.StringAttribute{
-								Computed:    true,
-								Description: `; Example: "all-sharded"`,
+								Computed: true,
 							},
 							"nodes": schema.ListAttribute{
 								Computed:    true,
@@ -2002,15 +1764,13 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 								},
 							},
 							"normalized_name": schema.StringAttribute{
-								Computed:    true,
-								Description: `; Example: "all-sharded"`,
+								Computed: true,
 							},
 							"owner": schema.SingleNestedAttribute{
 								Computed: true,
 								Attributes: map[string]schema.Attribute{
 									"backup_tool": schema.StringAttribute{
-										Computed:    true,
-										Description: `; Example: "altinity/clickhouse-backup:2.1.3"`,
+										Computed: true,
 									},
 									"blocked": schema.BoolAttribute{
 										Computed: true,
@@ -2019,24 +1779,19 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 										Computed: true,
 									},
 									"email": schema.StringAttribute{
-										Computed:    true,
-										Description: `; Example: "thomas@speakeasyapi.dev"`,
+										Computed: true,
 									},
 									"id": schema.StringAttribute{
-										Computed:    true,
-										Description: `; Example: "1597"`,
+										Computed: true,
 									},
 									"id_organization": schema.StringAttribute{
-										Computed:    true,
-										Description: `; Example: "508"`,
+										Computed: true,
 									},
 									"id_role": schema.StringAttribute{
-										Computed:    true,
-										Description: `; Example: "3"`,
+										Computed: true,
 									},
 									"name": schema.StringAttribute{
-										Computed:    true,
-										Description: `; Example: "Thomas Rooney"`,
+										Computed: true,
 									},
 									"organization": schema.SingleNestedAttribute{
 										Computed: true,
@@ -2054,42 +1809,34 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 												Computed: true,
 											},
 											"company_name": schema.StringAttribute{
-												Computed:    true,
-												Description: `; Example: "Speakeasy API"`,
+												Computed: true,
 											},
 											"email_domain": schema.StringAttribute{
-												Computed:    true,
-												Description: `; Example: "speakeasyapi.dev"`,
+												Computed: true,
 											},
 											"expired": schema.BoolAttribute{
 												Computed: true,
 											},
 											"id": schema.StringAttribute{
-												Computed:    true,
-												Description: `; Example: "508"`,
+												Computed: true,
 											},
 											"id_default_user_role": schema.StringAttribute{
-												Computed:    true,
-												Description: `; Example: "6"`,
+												Computed: true,
 											},
 											"id_owner": schema.StringAttribute{
-												Computed:    true,
-												Description: `; Example: "104"`,
+												Computed: true,
 											},
 											"name": schema.StringAttribute{
-												Computed:    true,
-												Description: `; Example: "Speakeasy API"`,
+												Computed: true,
 											},
 											"opened": schema.BoolAttribute{
 												Computed: true,
 											},
 											"trial": schema.BoolAttribute{
-												Computed:    true,
-												Description: `; Example: "true"`,
+												Computed: true,
 											},
 											"trial_expiry": schema.StringAttribute{
-												Computed:    true,
-												Description: `; Example: "2023-07-13 00:00:00"`,
+												Computed: true,
 											},
 										},
 									},
@@ -2104,43 +1851,36 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 										Computed: true,
 										Attributes: map[string]schema.Attribute{
 											"id": schema.StringAttribute{
-												Computed:    true,
-												Description: `; Example: "3"`,
+												Computed: true,
 											},
 											"name": schema.StringAttribute{
-												Computed:    true,
-												Description: `; Example: "orgadmin"`,
+												Computed: true,
 											},
 											"rights": schema.ListNestedAttribute{
 												Computed: true,
 												NestedObject: schema.NestedAttributeObject{
 													Attributes: map[string]schema.Attribute{
 														"access": schema.StringAttribute{
-															Computed:    true,
-															Description: `; Example: "deny"`,
+															Computed: true,
 														},
 														"action": schema.StringAttribute{
-															Computed:    true,
-															Description: `; Example: "actionEditRole"`,
+															Computed: true,
 														},
 														"class": schema.StringAttribute{
-															Computed:    true,
-															Description: `; Example: "Accounts"`,
+															Computed: true,
 														},
 													},
 												},
 											},
 											"system": schema.BoolAttribute{
-												Computed:    true,
-												Description: `; Example: "true"`,
+												Computed: true,
 											},
 										},
 									},
 								},
 							},
 							"query_monitoring_url": schema.StringAttribute{
-								Computed:    true,
-								Description: `; Example: "/monitoring/675/d/clickhouse-queries/clickhouse-in-kubernetes-queries?var-exported_namespace=altinity-cloud-managed-clickhouse&var-chi=all-sharded&var-hostname=All"`,
+								Computed: true,
 							},
 							"replicas": schema.Int64Attribute{
 								Computed: true,
@@ -2152,16 +1892,13 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 								Computed: true,
 							},
 							"system_monitoring_url": schema.StringAttribute{
-								Computed:    true,
-								Description: `; Example: "/monitoring/675/d/kQsMXaG4z/system-load?var-chi=all-sharded"`,
+								Computed: true,
 							},
 							"system_version": schema.StringAttribute{
-								Computed:    true,
-								Description: `; Example: "23.3.33"`,
+								Computed: true,
 							},
 							"uptime": schema.StringAttribute{
-								Computed:    true,
-								Description: `; Example: "always"`,
+								Computed: true,
 							},
 							"uptime_settings": schema.ListAttribute{
 								Computed:    true,
@@ -2181,12 +1918,10 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 				PlanModifiers: []planmodifier.String{
 					stringplanmodifier.RequiresReplace(),
 				},
-				Required:    true,
-				Description: `; Example: "ingress"`,
+				Required: true,
 			},
 			"logs_monitoring_url": schema.StringAttribute{
-				Computed:    true,
-				Description: `; Example: "/monitoring/675/d/logs-dashboard/logs-dashboard?var-chi=dev"`,
+				Computed: true,
 			},
 			"migration_progress": schema.Int64Attribute{
 				Computed: true,
@@ -2198,84 +1933,68 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 				PlanModifiers: []planmodifier.String{
 					stringplanmodifier.RequiresReplace(),
 				},
-				Required:    true,
-				Description: `; Example: "dev"`,
+				Required: true,
 			},
 			"nodes": schema.Int64Attribute{
 				PlanModifiers: []planmodifier.Int64{
 					int64planmodifier.RequiresReplace(),
 				},
-				Required:    true,
-				Description: `; Example: "1"`,
+				Required: true,
 			},
 			"node_type": schema.StringAttribute{
 				PlanModifiers: []planmodifier.String{
 					stringplanmodifier.RequiresReplace(),
 				},
-				Required:    true,
-				Description: `; Example: "n2d-standard-2"`,
+				Required: true,
 			},
 			"normalized_name": schema.StringAttribute{
-				Computed:    true,
-				Description: `; Example: "dev"`,
+				Computed: true,
 			},
 			"options": schema.SingleNestedAttribute{
 				Computed: true,
 				Attributes: map[string]schema.Attribute{
 					"acm_host": schema.StringAttribute{
-						Computed:    true,
-						Description: `; Example: "https://acm.altinity.cloud"`,
+						Computed: true,
 					},
 					"azlist": schema.ListAttribute{
 						Computed:    true,
 						ElementType: types.StringType,
 					},
 					"cpu": schema.StringAttribute{
-						Computed:    true,
-						Description: `; Example: "2"`,
+						Computed: true,
 					},
 					"disks": schema.Int64Attribute{
-						Computed:    true,
-						Description: `; Example: "1"`,
+						Computed: true,
 					},
 					"ip_whitelist": schema.StringAttribute{
-						Computed:    true,
-						Description: `; Example: "31.94.0.155"`,
+						Computed: true,
 					},
 					"lb_type": schema.StringAttribute{
-						Computed:    true,
-						Description: `; Example: "ingress"`,
+						Computed: true,
 					},
 					"managed_p_vs": schema.BoolAttribute{
-						Computed:    true,
-						Description: `; Example: "true"`,
+						Computed: true,
 					},
 					"memory": schema.StringAttribute{
-						Computed:    true,
-						Description: `; Example: "6144"`,
+						Computed: true,
 					},
 					"region": schema.StringAttribute{
 						Computed: true,
 					},
 					"size": schema.Int64Attribute{
-						Computed:    true,
-						Description: `; Example: "100"`,
+						Computed: true,
 					},
 					"static": schema.BoolAttribute{
-						Computed:    true,
-						Description: `; Example: "true"`,
+						Computed: true,
 					},
 					"storage_class": schema.StringAttribute{
-						Computed:    true,
-						Description: `; Example: "pd-balanced"`,
+						Computed: true,
 					},
 					"type": schema.StringAttribute{
-						Computed:    true,
-						Description: `; Example: "n2d-standard-2"`,
+						Computed: true,
 					},
 					"version": schema.StringAttribute{
-						Computed:    true,
-						Description: `; Example: "22.8.15.25.altinitystable"`,
+						Computed: true,
 					},
 					"zk_root": schema.BoolAttribute{
 						Computed: true,
@@ -2286,8 +2005,7 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 				Computed: true,
 				Attributes: map[string]schema.Attribute{
 					"backup_tool": schema.StringAttribute{
-						Computed:    true,
-						Description: `; Example: "altinity/clickhouse-backup:2.1.3"`,
+						Computed: true,
 					},
 					"blocked": schema.BoolAttribute{
 						Computed: true,
@@ -2296,24 +2014,19 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 						Computed: true,
 					},
 					"email": schema.StringAttribute{
-						Computed:    true,
-						Description: `; Example: "thomas@speakeasyapi.dev"`,
+						Computed: true,
 					},
 					"id": schema.StringAttribute{
-						Computed:    true,
-						Description: `; Example: "1597"`,
+						Computed: true,
 					},
 					"id_organization": schema.StringAttribute{
-						Computed:    true,
-						Description: `; Example: "508"`,
+						Computed: true,
 					},
 					"id_role": schema.StringAttribute{
-						Computed:    true,
-						Description: `; Example: "3"`,
+						Computed: true,
 					},
 					"name": schema.StringAttribute{
-						Computed:    true,
-						Description: `; Example: "Thomas Rooney"`,
+						Computed: true,
 					},
 					"organization": schema.SingleNestedAttribute{
 						Computed: true,
@@ -2331,42 +2044,34 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 								Computed: true,
 							},
 							"company_name": schema.StringAttribute{
-								Computed:    true,
-								Description: `; Example: "Speakeasy API"`,
+								Computed: true,
 							},
 							"email_domain": schema.StringAttribute{
-								Computed:    true,
-								Description: `; Example: "speakeasyapi.dev"`,
+								Computed: true,
 							},
 							"expired": schema.BoolAttribute{
 								Computed: true,
 							},
 							"id": schema.StringAttribute{
-								Computed:    true,
-								Description: `; Example: "508"`,
+								Computed: true,
 							},
 							"id_default_user_role": schema.StringAttribute{
-								Computed:    true,
-								Description: `; Example: "6"`,
+								Computed: true,
 							},
 							"id_owner": schema.StringAttribute{
-								Computed:    true,
-								Description: `; Example: "104"`,
+								Computed: true,
 							},
 							"name": schema.StringAttribute{
-								Computed:    true,
-								Description: `; Example: "Speakeasy API"`,
+								Computed: true,
 							},
 							"opened": schema.BoolAttribute{
 								Computed: true,
 							},
 							"trial": schema.BoolAttribute{
-								Computed:    true,
-								Description: `; Example: "true"`,
+								Computed: true,
 							},
 							"trial_expiry": schema.StringAttribute{
-								Computed:    true,
-								Description: `; Example: "2023-07-13 00:00:00"`,
+								Computed: true,
 							},
 						},
 					},
@@ -2381,35 +2086,29 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 						Computed: true,
 						Attributes: map[string]schema.Attribute{
 							"id": schema.StringAttribute{
-								Computed:    true,
-								Description: `; Example: "3"`,
+								Computed: true,
 							},
 							"name": schema.StringAttribute{
-								Computed:    true,
-								Description: `; Example: "orgadmin"`,
+								Computed: true,
 							},
 							"rights": schema.ListNestedAttribute{
 								Computed: true,
 								NestedObject: schema.NestedAttributeObject{
 									Attributes: map[string]schema.Attribute{
 										"access": schema.StringAttribute{
-											Computed:    true,
-											Description: `; Example: "deny"`,
+											Computed: true,
 										},
 										"action": schema.StringAttribute{
-											Computed:    true,
-											Description: `; Example: "actionEditRole"`,
+											Computed: true,
 										},
 										"class": schema.StringAttribute{
-											Computed:    true,
-											Description: `; Example: "Accounts"`,
+											Computed: true,
 										},
 									},
 								},
 							},
 							"system": schema.BoolAttribute{
-								Computed:    true,
-								Description: `; Example: "true"`,
+								Computed: true,
 							},
 						},
 					},
@@ -2419,19 +2118,16 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 				PlanModifiers: []planmodifier.Int64{
 					int64planmodifier.RequiresReplace(),
 				},
-				Required:    true,
-				Description: `; Example: "9900"`,
+				Required: true,
 			},
 			"public_endpoint": schema.BoolAttribute{
 				PlanModifiers: []planmodifier.Bool{
 					boolplanmodifier.RequiresReplace(),
 				},
-				Required:    true,
-				Description: `; Example: "true"`,
+				Required: true,
 			},
 			"query_monitoring_url": schema.StringAttribute{
-				Computed:    true,
-				Description: `; Example: "/monitoring/675/d/clickhouse-queries/clickhouse-in-kubernetes-queries?var-exported_namespace=altinity-cloud-managed-clickhouse&var-chi=dev&var-hostname=All"`,
+				Computed: true,
 			},
 			"region": schema.StringAttribute{
 				PlanModifiers: []planmodifier.String{
@@ -2443,80 +2139,67 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 				PlanModifiers: []planmodifier.String{
 					stringplanmodifier.RequiresReplace(),
 				},
-				Required:    true,
-				Description: `; Example: "1"`,
+				Required: true,
 			},
 			"replicate_schema": schema.BoolAttribute{
 				PlanModifiers: []planmodifier.Bool{
 					boolplanmodifier.RequiresReplace(),
 				},
-				Required:    true,
-				Description: `; Example: "true"`,
+				Required: true,
 			},
 			"secure": schema.BoolAttribute{
 				PlanModifiers: []planmodifier.Bool{
 					boolplanmodifier.RequiresReplace(),
 				},
-				Required:    true,
-				Description: `; Example: "true"`,
+				Required: true,
 			},
 			"shards": schema.Int64Attribute{
 				PlanModifiers: []planmodifier.Int64{
 					int64planmodifier.RequiresReplace(),
 				},
-				Required:    true,
-				Description: `; Example: "1"`,
+				Required: true,
 			},
 			"size": schema.Int64Attribute{
 				PlanModifiers: []planmodifier.Int64{
 					int64planmodifier.RequiresReplace(),
 				},
-				Required:    true,
-				Description: `; Example: "100"`,
+				Required: true,
 			},
 			"ssh_port": schema.Int64Attribute{
 				PlanModifiers: []planmodifier.Int64{
 					int64planmodifier.RequiresReplace(),
 				},
-				Required:    true,
-				Description: `; Example: "2222"`,
+				Required: true,
 			},
 			"startup_mode": schema.StringAttribute{
-				Computed:    true,
-				Description: `; Example: "direct"`,
+				Computed: true,
 			},
 			"status": schema.StringAttribute{
-				Computed:    true,
-				Description: `; Example: "pending"`,
+				Computed: true,
 			},
 			"storage_class": schema.StringAttribute{
 				PlanModifiers: []planmodifier.String{
 					stringplanmodifier.RequiresReplace(),
 				},
-				Required:    true,
-				Description: `; Example: "pd-balanced"`,
+				Required: true,
 			},
 			"system_monitoring_url": schema.StringAttribute{
-				Computed:    true,
-				Description: `; Example: "/monitoring/675/d/kQsMXaG4z/system-load?var-chi=dev"`,
+				Computed: true,
 			},
 			"system_version": schema.StringAttribute{
-				Computed:    true,
-				Description: `; Example: "23.3.33"`,
+				Computed: true,
 			},
 			"type": schema.StringAttribute{
 				PlanModifiers: []planmodifier.String{
 					stringplanmodifier.RequiresReplace(),
 				},
-				Required:    true,
-				Description: `; Example: "kubernetes"`,
+				Required: true,
 			},
 			"uptime": schema.StringAttribute{
 				PlanModifiers: []planmodifier.String{
 					stringplanmodifier.RequiresReplace(),
 				},
-				Required:    true,
-				Description: `; Example: "stop"`,
+				Required: true,
 			},
 			"uptime_settings": schema.SingleNestedAttribute{
 				PlanModifiers: []planmodifier.Object{
@@ -2528,8 +2211,7 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 						PlanModifiers: []planmodifier.Int64{
 							int64planmodifier.RequiresReplace(),
 						},
-						Required:    true,
-						Description: `; Example: "24"`,
+						Required: true,
 					},
 					"schedule": schema.SingleNestedAttribute{
 						PlanModifiers: []planmodifier.Object{
@@ -2547,15 +2229,13 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 										PlanModifiers: []planmodifier.Bool{
 											boolplanmodifier.RequiresReplace(),
 										},
-										Required:    true,
-										Description: `; Example: "true"`,
+										Required: true,
 									},
 									"all_day": schema.BoolAttribute{
 										PlanModifiers: []planmodifier.Bool{
 											boolplanmodifier.RequiresReplace(),
 										},
-										Required:    true,
-										Description: `; Example: "true"`,
+										Required: true,
 									},
 									"range": schema.SingleNestedAttribute{
 										PlanModifiers: []planmodifier.Object{
@@ -2589,15 +2269,13 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 										PlanModifiers: []planmodifier.Bool{
 											boolplanmodifier.RequiresReplace(),
 										},
-										Required:    true,
-										Description: `; Example: "true"`,
+										Required: true,
 									},
 									"all_day": schema.BoolAttribute{
 										PlanModifiers: []planmodifier.Bool{
 											boolplanmodifier.RequiresReplace(),
 										},
-										Required:    true,
-										Description: `; Example: "true"`,
+										Required: true,
 									},
 									"range": schema.SingleNestedAttribute{
 										PlanModifiers: []planmodifier.Object{
@@ -2631,15 +2309,13 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 										PlanModifiers: []planmodifier.Bool{
 											boolplanmodifier.RequiresReplace(),
 										},
-										Required:    true,
-										Description: `; Example: "true"`,
+										Required: true,
 									},
 									"all_day": schema.BoolAttribute{
 										PlanModifiers: []planmodifier.Bool{
 											boolplanmodifier.RequiresReplace(),
 										},
-										Required:    true,
-										Description: `; Example: "true"`,
+										Required: true,
 									},
 									"range": schema.SingleNestedAttribute{
 										PlanModifiers: []planmodifier.Object{
@@ -2673,15 +2349,13 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 										PlanModifiers: []planmodifier.Bool{
 											boolplanmodifier.RequiresReplace(),
 										},
-										Required:    true,
-										Description: `; Example: "true"`,
+										Required: true,
 									},
 									"all_day": schema.BoolAttribute{
 										PlanModifiers: []planmodifier.Bool{
 											boolplanmodifier.RequiresReplace(),
 										},
-										Required:    true,
-										Description: `; Example: "true"`,
+										Required: true,
 									},
 									"range": schema.SingleNestedAttribute{
 										PlanModifiers: []planmodifier.Object{
@@ -2715,15 +2389,13 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 										PlanModifiers: []planmodifier.Bool{
 											boolplanmodifier.RequiresReplace(),
 										},
-										Required:    true,
-										Description: `; Example: "true"`,
+										Required: true,
 									},
 									"all_day": schema.BoolAttribute{
 										PlanModifiers: []planmodifier.Bool{
 											boolplanmodifier.RequiresReplace(),
 										},
-										Required:    true,
-										Description: `; Example: "true"`,
+										Required: true,
 									},
 									"range": schema.SingleNestedAttribute{
 										PlanModifiers: []planmodifier.Object{
@@ -2757,15 +2429,13 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 										PlanModifiers: []planmodifier.Bool{
 											boolplanmodifier.RequiresReplace(),
 										},
-										Required:    true,
-										Description: `; Example: "true"`,
+										Required: true,
 									},
 									"all_day": schema.BoolAttribute{
 										PlanModifiers: []planmodifier.Bool{
 											boolplanmodifier.RequiresReplace(),
 										},
-										Required:    true,
-										Description: `; Example: "true"`,
+										Required: true,
 									},
 									"range": schema.SingleNestedAttribute{
 										PlanModifiers: []planmodifier.Object{
@@ -2799,15 +2469,13 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 										PlanModifiers: []planmodifier.Bool{
 											boolplanmodifier.RequiresReplace(),
 										},
-										Required:    true,
-										Description: `; Example: "true"`,
+										Required: true,
 									},
 									"all_day": schema.BoolAttribute{
 										PlanModifiers: []planmodifier.Bool{
 											boolplanmodifier.RequiresReplace(),
 										},
-										Required:    true,
-										Description: `; Example: "true"`,
+										Required: true,
 									},
 									"range": schema.SingleNestedAttribute{
 										PlanModifiers: []planmodifier.Object{
@@ -2839,8 +2507,7 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 				PlanModifiers: []planmodifier.String{
 					stringplanmodifier.RequiresReplace(),
 				},
-				Required:    true,
-				Description: `; Example: "22.8.15.25.altinitystable"`,
+				Required: true,
 			},
 			"version_image": schema.StringAttribute{
 				PlanModifiers: []planmodifier.String{
@@ -2852,8 +2519,7 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 				PlanModifiers: []planmodifier.String{
 					stringplanmodifier.RequiresReplace(),
 				},
-				Required:    true,
-				Description: `; Example: "launch"`,
+				Required: true,
 			},
 			"zookeeper_options": schema.SingleNestedAttribute{
 				PlanModifiers: []planmodifier.Object{
@@ -2865,15 +2531,13 @@ func (r *ClickhouseClusterResource) Schema(ctx context.Context, req resource.Sch
 						PlanModifiers: []planmodifier.String{
 							stringplanmodifier.RequiresReplace(),
 						},
-						Required:    true,
-						Description: `; Example: "1"`,
+						Required: true,
 					},
 					"size": schema.StringAttribute{
 						PlanModifiers: []planmodifier.String{
 							stringplanmodifier.RequiresReplace(),
 						},
-						Required:    true,
-						Description: `; Example: "single"`,
+						Required: true,
 					},
 					"tag": schema.StringAttribute{
 						PlanModifiers: []planmodifier.String{
