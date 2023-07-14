@@ -1,4 +1,4 @@
-# Terraform Provider Altinity
+# Terraform Provider for Altinity Cloud
 
 <!-- Start SDK Installation -->
 ## SDK Installation
